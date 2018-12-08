@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+from numpy import *
+import operator
+from blaze.partition import Dataset
+
+def createDataSet(): #使用python导入数据
+    group = array([[1.0,1.1], [1.0,1.0], [0,0], [0,0.1]])
+    labels = ['A', 'A', 'B', 'B']
+    return group, labels
+
+def classify(inX, dataset, labels, k): #程序清单2-1 k-近邻算法
+    print("dataset:")
+    print(dataset)
+    print('labels:')
+    print(labels)
+    dataSetSize = dataset.shape[0]
+    print(dataSetSize)
+    diffMat = tile(inX, (dataSetSize, 1)) - dataset
+    sqDiffMat = diffMat**2
+    sqDistances = sqDiffMat.sum(axis = 1)
+    distances = sqDistances**0.5
+    print(distances)
+    sortedDistIndicies = distances.argsort() #排序，输出索引
+    print(sortedDistIndicies)
+    
+    classCount = {}
+    for i in range(k):
+        voteIlabel = labels[sortedDistIndicies[i]]
+        classCount[voteIlabel] = classCount.get(voteIlabel, 0) + 1
+     
+    print(classCount.iteritems())
+    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True) #
+    print(sortedClassCount)
+    return sortedClassCount[0][0]
+
+
+
+def file2matrix(filename): #程序清单2-2 将文本记录转换到NumPy的解析程序
+    fr = open(filename)
+    arrayOLines = fr.readlines() #readlines() 自动将文件内容分析成一个行的列表; readline() 每次只读取一行;read() 每次读取整个文件，它通常用于将文件内容放到一个字符串变量中
+    numberOfLines = len(arrayOLines)
+    returnMat = zeros((numberOfLines, 3))
+    classLabelVector = []
+    index = 0
+    for line in arrayOLines:
+        line = line.strip() #strip()，它返回的是字符串的副本，并删除前导和后缀字符
+        listFromLine = line.split('\t') #split()：拆分字符串。通过指定分隔符对字符串进行切片，并返回分割后的字符串列表（list）
+        returnMat[index,:] = listFromLine[0:3]
+        classLabelVector.append(int(listFromLine[-1])) #-1表示最后一个开始
+        index += 1
+    return returnMat.classLabelVector
+

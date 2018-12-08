@@ -1,0 +1,14 @@
+
+import kNN
+
+group, labels = kNN.createDataSet()
+
+k = 3
+result = kNN.classify([0, 0], group, labels, 3)
+
+
+aList = [123, 'xyz', 'zara', 'abc'];
+aList.append( 123 );
+print "Updated List : ", aList;
+
+print(result)

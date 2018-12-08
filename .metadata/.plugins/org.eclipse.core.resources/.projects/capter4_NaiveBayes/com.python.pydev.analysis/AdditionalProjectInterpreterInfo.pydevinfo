@@ -1,0 +1,45 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter4_NaiveBayes\com.python.pydev.analysis\v2_indexcache
+naiveBayes|1542891515399147000|E:\java_test\capter4_NaiveBayes\src\naiveBayes.py
+nbcNaiveBayes|1542125421276303000|E:\java_test\capter4_NaiveBayes\src\nbcNaiveBayes.py
+naiveBayes_test02|1542119995958042000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test02.py
+naiveBayes_test03|1542120018779753000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test03.py
+naiveBayes_test01|1542096751979080000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test01.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+1=nbcNaiveBayes
+2=naiveBayes
+5=naiveBayes_test02
+3=naiveBayes_test03
+4=naiveBayes_test01
+-- END DICTIONARY
+-- START TREE 1
+22
+ave|1|ave!11@
+bag|1|bagOfWords2VecMN!18@
+cal|1|calcMostFreq!26@
+cla|1|classifyNB!18@
+cre|1|createVocabList!18@
+del|1|deleteNs!11@
+fea|1|feature_words!11@
+fol|1|folder_path!11@
+loa|1|loadDataSet!34@
+loc|1|localWords!26@
+mak|1|MakeWordsSet!10@
+ny|1|ny!27@
+set|1|setOfWords2Vec!18@
+sf|1|sf!27@
+sor|2|sortedNY!27@sortedSF!27@
+spa|1|spamTest!42@
+sto|2|stopwords_file!11@stopwords_set!11@
+tes|3|test_accuracy_list!11@testingNB!34@test_accuracy!11@
+tex|5|TextClassifier!10@textParse!18@text_features!10@TextFeatures!10@TextProcessing!10@
+top|2|topNY!27@topSF!27@
+tra|1|trainNB0!18@
+wor|1|words_dict!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

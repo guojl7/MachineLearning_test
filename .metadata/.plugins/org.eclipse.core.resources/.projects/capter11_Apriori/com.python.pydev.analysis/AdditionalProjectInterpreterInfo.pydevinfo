@@ -1,0 +1,30 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter11_Apriori\com.python.pydev.analysis\v2_indexcache
+apriori|1543671568175410000|E:\java_test\capter11_Apriori\src\apriori.py
+apriori_test02_vote|1543671613248922000|E:\java_test\capter11_Apriori\src\apriori_test02_vote.py
+apriori_test01|1543671866837227000|E:\java_test\capter11_Apriori\src\apriori_test01.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+1=apriori
+2=apriori_test02_vote
+3=apriori_test01
+-- END DICTIONARY
+-- START TREE 1
+11
+apr|2|aprioriGen!10@apriori!10@
+cal|1|calcConf!10@
+cre|1|createC1!10@
+dat|2|dataSet!19@dataSet!27@
+gen|1|generateRules!10@
+get|2|getActionIds!18@getTransList!18@
+loa|1|loadDataSet!26@
+mus|1|mushDatSet!27@
+pnt|1|pntRules!18@
+rul|3|rules!19@rulesFromConseq!10@rules!27@
+sca|1|scanD!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

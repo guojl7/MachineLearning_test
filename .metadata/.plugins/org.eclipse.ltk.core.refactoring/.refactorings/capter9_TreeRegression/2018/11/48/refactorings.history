@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;capter9_TreeRegression/src/TreeRegression_test02_ModelTree - 副本.py&apos; to &apos;TreeRegression_test02_ModelTree.py&apos;" description="Rename resource &apos;TreeRegression_test02_ModelTree - 副本.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/TreeRegression_test02_ModelTree - 副本.py" name="TreeRegression_test02_ModelTree.py" stamp="1543450521689" updateReferences="true"/>
+</session>

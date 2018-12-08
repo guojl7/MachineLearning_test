@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;capter3_DecisionTree/src/Decision Tree.py&apos; to &apos;DecisionTree.py&apos;" description="Rename resource &apos;Decision Tree.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Decision Tree.py" name="DecisionTree.py" stamp="1541927325844" updateReferences="true"/>
+</session>

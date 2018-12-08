@@ -1,0 +1,9 @@
+#-*- coding:utf-8 -*-
+import numpy as np
+import kMeans
+
+if __name__ == '__main__':
+    dataMat = np.mat(kMeans.loadDataSet('testSet.txt'))
+    myCentroids, clustAssing = kMeans.kMeans(dataMat, 4)
+    print('质心：%r' % myCentroids)
+    print('索引以及储存误差： %r' % clustAssing)

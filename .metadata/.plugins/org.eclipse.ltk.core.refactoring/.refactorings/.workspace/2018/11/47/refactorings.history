@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;capter6_SVM/src/svm-simple.py&apos;" deleteContents="false" description="Delete resource &apos;capter6_SVM/src/svm-simple.py&apos;" element1="/capter6_SVM/src/svm-simple.py" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1542734860017"/>
+</session>

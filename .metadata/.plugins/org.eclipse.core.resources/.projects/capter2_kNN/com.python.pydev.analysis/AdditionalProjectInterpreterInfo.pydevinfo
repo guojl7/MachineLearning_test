@@ -1,0 +1,33 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter2_kNN\com.python.pydev.analysis\v2_indexcache
+kNN_base|1541919580322513000|E:\java_test\capter2_kNN\src\kNN_base.py
+kNN_test04|1541024932000000000|E:\java_test\capter2_kNN\src\kNN_test04.py
+kNN_test03|1541919545730364000|E:\java_test\capter2_kNN\src\kNN_test03.py
+kNN_test02|1541919439335442000|E:\java_test\capter2_kNN\src\kNN_test02.py
+kNN_test01|1542638164956322000|E:\java_test\capter2_kNN\src\kNN_test01.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+1=kNN_base
+4=kNN_test04
+5=kNN_test03
+2=kNN_test02
+3=kNN_test01
+-- END DICTIONARY
+-- START TREE 1
+10
+aut|1|autoNorm!10@
+cla|2|classify!10@classifyPerson!18@
+cre|1|createDataSet!26@
+dat|1|datingClassTest!18@
+fil|1|file2matrix!18@
+han|2|handwritingClassTest!34@handwritingClassTest!42@
+img|2|img2vector!34@img2vector!42@
+k|1|k!27@
+res|1|result!27@
+sho|1|showdatas!18@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

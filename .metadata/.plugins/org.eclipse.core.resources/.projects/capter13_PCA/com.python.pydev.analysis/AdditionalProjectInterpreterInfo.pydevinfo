@@ -1,0 +1,52 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter13_PCA\com.python.pydev.analysis\v2_indexcache
+extras.createFig2|1455749408000000000|E:\java_test\capter13_PCA\src\extras\createFig2.py
+extras.createFig1|1455749408000000000|E:\java_test\capter13_PCA\src\extras\createFig1.py
+extras.createFig4|1455749408000000000|E:\java_test\capter13_PCA\src\extras\createFig4.py
+extras.createFig3|1455749408000000000|E:\java_test\capter13_PCA\src\extras\createFig3.py
+pca_test01|1544000631486387000|E:\java_test\capter13_PCA\src\pca_test01.py
+pca|1543998552299952000|E:\java_test\capter13_PCA\src\pca.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+1=extras.createFig2
+5=extras.createFig1
+3=extras.createFig4
+2=extras.createFig3
+4=pca_test01
+6=pca
+-- END DICTIONARY
+-- START TREE 1
+27
+ax|5|ax!11@ax!19@ax!27@ax!35@ax!43@
+col|2|colors!19@colors!43@
+cov|1|covMat!27@
+dat|3|dataMat!27@dataMat!11@dataMat!35@
+eig|1|eigValInd!27@
+ffl|1|fFlyer!43@
+fig|5|fig!11@fig!43@fig!19@fig!35@fig!27@
+fw|2|fw!43@fw!19@
+gro|1|groupNum!19@
+lab|3|label2Mat!19@label0Mat!19@label1Mat!19@
+loa|1|loadDataSet!50@
+mar|2|markers!43@markers!19@
+mea|2|meanVals!27@meanRemoved!27@
+mus|0|
+myd|1|myDat!19@
+n|2|n!19@n!43@
+pca|1|pca!50@
+rep|1|replaceNanWithMean!50@
+rul|0|
+sor|1|sortedEigVals!27@
+tat|1|tats!43@
+tot|1|total!27@
+var|1|varPercentage!27@
+x|1|x!19@
+xco|5|xcord0!19@xcord1!43@xcord1!19@xcord0!43@xcord2!19@
+y|1|y!19@
+yco|2|ycord0!43@ycord1!43@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

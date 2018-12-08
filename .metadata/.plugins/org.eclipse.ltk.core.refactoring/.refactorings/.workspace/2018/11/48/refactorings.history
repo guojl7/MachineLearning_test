@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;capter8__LinearRegression&apos;" deleteContents="true" description="Delete resource &apos;capter8__LinearRegression&apos;" element1="/capter8__LinearRegression" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1543239922829"/>
+</session>

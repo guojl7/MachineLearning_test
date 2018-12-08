@@ -1,0 +1,8 @@
+MODULES_MANAGER_V2
+SVM_KernelTrans|E:\java_test\capter6_SVM\src\SVM_KernelTrans.py
+SVM_Simple_and_Linear|E:\java_test\capter6_SVM\src\SVM_Simple_and_Linear.py
+SVM_test01_simpleSMO|E:\java_test\capter6_SVM\src\SVM_test01_simpleSMO.py
+SVM_test02_SMO|E:\java_test\capter6_SVM\src\SVM_test02_SMO.py
+SVM_test03_KernelTrans|E:\java_test\capter6_SVM\src\SVM_test03_KernelTrans.py
+SVM_test04_HandwritingClassTest|E:\java_test\capter6_SVM\src\SVM_test04_HandwritingClassTest.py
+SVM_test05_HandwritingClassTest_standard|E:\java_test\capter6_SVM\src\SVM_test05_HandwritingClassTest_standard.py

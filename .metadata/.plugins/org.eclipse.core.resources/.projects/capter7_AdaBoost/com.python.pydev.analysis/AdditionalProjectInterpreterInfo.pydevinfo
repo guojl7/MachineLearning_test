@@ -1,0 +1,32 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter7_AdaBoost\com.python.pydev.analysis\v2_indexcache
+AdaBoost|1542878832348439000|E:\java_test\capter7_AdaBoost\src\AdaBoost.py
+AdaBoost_test01_SimpData|1542877839446035000|E:\java_test\capter7_AdaBoost\src\AdaBoost_test01_SimpData.py
+AdaBoost_test02_HorseAdaboost|1542878866133837000|E:\java_test\capter7_AdaBoost\src\AdaBoost_test02_HorseAdaboost.py
+AdaBoost_test04_ROC|1542879526656543000|E:\java_test\capter7_AdaBoost\src\AdaBoost_test04_ROC.py
+AdaBoost_test03_HorseAdaboost_Standard|1542878919143266000|E:\java_test\capter7_AdaBoost\src\AdaBoost_test03_HorseAdaboost_Standard.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+1=AdaBoost
+3=AdaBoost_test02_HorseAdaboost
+4=AdaBoost_test01_SimpData
+5=AdaBoost_test04_ROC
+2=AdaBoost_test03_HorseAdaboost_Standard
+-- END DICTIONARY
+-- START TREE 1
+9
+ada|2|adaClassify!10@adaBoostTrainDS!10@
+bdt|1|bdt!19@
+bui|1|buildStump!10@
+err|2|errArr!27@errArr!19@
+loa|2|loadDataSet!10@loadSimpData!34@
+plo|1|plotROC!42@
+pre|2|predictions!27@predictions!19@
+sho|1|showDataSet!10@
+stu|1|stumpClassify!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

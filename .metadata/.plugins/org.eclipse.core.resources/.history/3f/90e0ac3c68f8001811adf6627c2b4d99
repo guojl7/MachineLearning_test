@@ -1,0 +1,14 @@
+#-*- coding:utf-8 -*-
+from numpy import *
+import pca
+
+if __name__ == '__main__':
+    dataSet = loadDataSet()
+    L1, supportData = apriori.apriori(dataSet, 0.5)
+    rules = apriori.generateRules(L1, supportData, minConf = 0.7) 
+    print(rules)
+    
+    mushDatSet = [line.split() for line in open('mushroom.dat').readlines()]
+    L_mush,supportData_mush = apriori.apriori(mushDatSet, minSupport = 0.3)
+    for item in L_mush[1]:
+        if item.intersection('2'):print item

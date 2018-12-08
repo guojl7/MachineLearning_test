@@ -1,0 +1,45 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter9_TreeRegression\com.python.pydev.analysis\v2_indexcache
+TreeRegression_test02_ModelTree|1543411211174116000|E:\java_test\capter9_TreeRegression\src\TreeRegression_test02_ModelTree.py
+TreeRegression_test01_RegressionTree|1543411408428054000|E:\java_test\capter9_TreeRegression\src\TreeRegression_test01_RegressionTree.py
+TreeRegression|1543457558837258000|E:\java_test\capter9_TreeRegression\src\TreeRegression.py
+treeExplore|1543459470174340000|E:\java_test\capter9_TreeRegression\src\treeExplore.py
+TreeRegression_test03_ModelTree|1543456277360325000|E:\java_test\capter9_TreeRegression\src\TreeRegression_test03_ModelTree.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+5=TreeRegression_test02_ModelTree
+4=TreeRegression_test01_RegressionTree
+1=TreeRegression
+2=treeExplore
+3=TreeRegression_test03_ModelTree
+-- END DICTIONARY
+-- START TREE 1
+22
+bin|1|binSplitDataSet!10@
+chk|2|chkBtnVar!19@chkBtn!19@
+cho|1|chooseBestSplit!10@
+cre|2|createForeCast!10@createTree!10@
+dra|1|drawNewTree!18@
+get|2|getMean!10@getInputs!18@
+ist|1|isTree!10@
+lin|1|linearSolve!10@
+loa|1|loadDataSet!10@
+m|1|m!27@
+mod|3|modelErr!10@modelTreeEval!10@modelLeaf!10@
+myt|2|myTree_ModelTree!27@myTree_regressionTree!27@
+plo|1|plotDataSet!10@
+pru|1|prune!10@
+red|1|reDraw!18@
+reg|3|regLeaf!10@regErr!10@regTreeEval!10@
+roo|1|root!19@
+tes|4|test_filename!35@test_Data!35@test_Mat!35@test_Mat!27@
+tol|2|tolNentry!19@tolSentry!19@
+tra|8|train_Mat!35@train_filename!43@train_Data!43@train_filename!35@train_filename!27@train_Mat!43@train_Data!35@train_Mat!27@
+tre|4|tree!43@tree!35@treeForeCast!10@treeAfterPrune!35@
+yha|3|yHat_regressionTree!27@yHat_ModelTree!27@yHat_linearRegression!27@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

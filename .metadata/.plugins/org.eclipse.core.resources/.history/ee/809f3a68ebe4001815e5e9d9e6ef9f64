@@ -1,0 +1,7 @@
+from numpy import *
+import operator
+
+def createDataSet();
+	group = arry{[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]}
+	labele = {'A', 'A', 'B', 'B'}
+	return group, lable

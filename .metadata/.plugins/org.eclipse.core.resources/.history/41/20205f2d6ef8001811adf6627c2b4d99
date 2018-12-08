@@ -1,0 +1,20 @@
+#-*- coding:utf-8 -*-
+from numpy import *
+import pca
+import matplotlib.pyplot as plt
+from extras.createFig4 import meanRemoved
+
+if __name__ == '__main__':
+    dataMat = pca.replaceNanWithMean()
+    meanVals = mean(dataMat, axis=0)
+    meanRemoved = dataMat - meanVals
+    covMat = cov(meanRemoved, rowvar=0)
+    eigVals,eigVects = linalg.eig(mat(covMat))
+    
+    lowDMat, reconMat = pca.pca(dataMat, 1)
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.scatter(dataMat[:,0].flatten().A[0], dataMat[:,1].flatten().A[0],marker='^',s=90)
+    ax.scatter(reconMat[:,0].flatten().A[0], reconMat[:,1].flatten().A[0], marker='o',s=50,c='red')
+    plt.show()

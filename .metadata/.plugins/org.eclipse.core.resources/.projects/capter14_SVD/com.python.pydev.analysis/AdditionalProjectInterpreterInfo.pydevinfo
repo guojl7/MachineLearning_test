@@ -1,0 +1,27 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter14_SVD\com.python.pydev.analysis\v2_indexcache
+SVD_test01|1544106322799697000|E:\java_test\capter14_SVD\src\SVD_test01.py
+SVD_test02|1544106368768091000|E:\java_test\capter14_SVD\src\SVD_test02.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=SVD_test01
+1=SVD_test02
+-- END DICTIONARY
+-- START TREE 1
+10
+cos|0|
+ecl|0|
+img|1|imgCompress!10@
+loa|1|loadExData!18@
+mym|1|myMat!19@
+pea|0|
+pri|1|printMat!10@
+rec|0|
+sta|0|
+svd|0|
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

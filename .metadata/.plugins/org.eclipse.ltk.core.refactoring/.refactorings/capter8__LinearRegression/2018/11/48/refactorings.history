@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;capter8__LinearRegression/src/LinearRegression_test01_StandRegres&apos; to &apos;LinearRegression_test01_StandRegres.py&apos;" description="Rename resource &apos;LinearRegression_test01_StandRegres&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/LinearRegression_test01_StandRegres" name="LinearRegression_test01_StandRegres.py" stamp="1543132412721" updateReferences="true"/>
+</session>

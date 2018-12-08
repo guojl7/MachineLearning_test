@@ -1,0 +1,9 @@
+
+import kNN
+
+group, labels = kNN.createDataSet()
+
+k = 3
+result = kNN.classify([0, 0], group, labels, 3)
+
+print(result)

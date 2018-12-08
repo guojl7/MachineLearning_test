@@ -1,0 +1,6 @@
+#-*- coding:utf-8 -*-
+from numpy import *
+import pca
+import matplotlib.pyplot as plt
+
+if __name__ == '__main__':

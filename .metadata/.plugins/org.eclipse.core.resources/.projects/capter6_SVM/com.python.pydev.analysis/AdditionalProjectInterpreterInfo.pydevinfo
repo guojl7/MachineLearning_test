@@ -1,0 +1,54 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter6_SVM\com.python.pydev.analysis\v2_indexcache
+SVM_test04_HandwritingClassTest|1542789963862975000|E:\java_test\capter6_SVM\src\SVM_test04_HandwritingClassTest.py
+SVM_KernelTrans|1542788458681069000|E:\java_test\capter6_SVM\src\SVM_KernelTrans.py
+SVM_test03_KernelTrans|1542788737275491000|E:\java_test\capter6_SVM\src\SVM_test03_KernelTrans.py
+SVM_test01_simpleSMO|1542789875276102000|E:\java_test\capter6_SVM\src\SVM_test01_simpleSMO.py
+SVM_Simple_and_Linear|1542770726830694000|E:\java_test\capter6_SVM\src\SVM_Simple_and_Linear.py
+SVM_test05_HandwritingClassTest_standard|1542790026547380000|E:\java_test\capter6_SVM\src\SVM_test05_HandwritingClassTest_standard.py
+SVM_test02_SMO|1542789369400811000|E:\java_test\capter6_SVM\src\SVM_test02_SMO.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+4=SVM_test04_HandwritingClassTest
+8=optStruct.__init__
+2=SVM_KernelTrans
+9=optStruct
+6=SVM_test03_KernelTrans
+5=SVM_test01_simpleSMO
+1=SVM_Simple_and_Linear
+3=SVM_test05_HandwritingClassTest_standard
+7=SVM_test02_SMO
+-- END DICTIONARY
+-- START TREE 1
+15
+cal|3|calcEk!10@calcEk!18@calcWs!10@
+cli|2|clipAlpha!18@clipAlpha!10@
+get|1|get_w!10@
+han|1|handwritingClassTest!26@
+img|2|img2vector!34@img2vector!26@
+inn|2|innerL!18@innerL!10@
+ker|1|kernelTrans!18@
+loa|3|loadDataSet!10@loadDataSet!18@loadImages!34@
+opt|2|optStruct!9@optStruct!17@
+sel|4|selectJrand!18@selectJ!18@selectJrand!10@selectJ!10@
+sho|3|showClassifer!10@showDataSet!18@showDataSet!42@
+smo|3|smoSimple!10@smoP!10@smoP!18@
+tes|2|testRbf!50@testDigits!34@
+upd|2|updateEk!10@updateEk!18@
+w|2|w!43@w!59@
+-- END TREE
+-- START TREE 2
+10
+C|2|C!8&11@C!8&19@
+K|1|K!8&19@
+X|2|X!8&19@X!8&11@
+__i|2|__init__!9&10@__init__!9&18@
+alp|2|alphas!8&19@alphas!8&11@
+b|2|b!8&11@b!8&19@
+eca|2|eCache!8&19@eCache!8&11@
+lab|2|labelMat!8&19@labelMat!8&11@
+m|2|m!8&19@m!8&11@
+tol|2|tol!8&19@tol!8&11@
+-- END TREE

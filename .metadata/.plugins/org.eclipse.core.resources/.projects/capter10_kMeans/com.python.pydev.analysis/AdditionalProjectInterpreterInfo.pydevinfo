@@ -1,0 +1,28 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter10_kMeans\com.python.pydev.analysis\v2_indexcache
+kMeans|1543630277655437000|E:\java_test\capter10_kMeans\src\kMeans.py
+kMeans_test01|1543630036074003000|E:\java_test\capter10_kMeans\src\kMeans_test01.py
+kMeans_test02_PortLandClubs|1543634575040462000|E:\java_test\capter10_kMeans\src\kMeans_test02_PortLandClubs.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+1=kMeans
+3=kMeans_test01
+2=kMeans_test02_PortLandClubs
+-- END DICTIONARY
+-- START TREE 1
+9
+bik|1|biKmeans!10@
+clu|1|clusterClubs!18@
+dat|2|dataMat3!27@dataMat!27@
+dis|2|distSLC!18@distEclud!10@
+geo|1|geoGrab!18@
+kme|1|kMeans!10@
+loa|1|loadDataSet!10@
+mas|1|massPlaceFind!18@
+ran|1|randCent!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,39 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter3_DecisionTree\com.python.pydev.analysis\v2_indexcache
+DecisionTree|1542768399537646000|E:\java_test\capter3_DecisionTree\src\DecisionTree.py
+DecisionTree_test02|1542027161903689000|E:\java_test\capter3_DecisionTree\src\DecisionTree_test02.py
+DecisionTree_test01|1542792190287830000|E:\java_test\capter3_DecisionTree\src\DecisionTree_test01.py
+SklearnDecisionTree|1542027448337320000|E:\java_test\capter3_DecisionTree\src\SklearnDecisionTree.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+1=DecisionTree
+3=DecisionTree_test02
+4=DecisionTree_test01
+2=SklearnDecisionTree
+-- END DICTIONARY
+-- START TREE 1
+18
+cal|1|calcShannonEnt!10@
+cho|1|chooseBestFeatureToSplit!10@
+cla|1|classify!10@
+clf|1|clf!19@
+cre|3|createTree!10@createPlot!10@createDataSet!10@
+dot|1|dot_data!19@
+get|2|getNumLeafs!10@getTreeDepth!10@
+gra|2|graph!19@grabTree!10@
+le|1|le!19@
+len|9|lenses_target!19@lenses_list!19@lenses_pd!19@lenses!19@lensesTree!27@lensesLabels!19@lenses!27@lensesLabels!27@lenses_dict!19@
+maj|1|majorityCnt!10@
+myt|2|myTree1!35@myTree!35@
+plo|3|plotNode!10@plotMidText!10@plotTree!10@
+res|2|result!27@result!35@
+spl|1|splitDataSet!10@
+sto|1|storeTree!10@
+tem|2|tempLensesLabels!27@tempLabels!35@
+tes|2|testVec!27@testVec!35@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,7 @@
+#-*- coding:utf-8 -*-
+from numpy import *
+import pca
+
+if __name__ == '__main__':
+    dataMat = pca.loadDataSet()
+    lowDMat, reconMat = pca.pca(dataMat, 1)

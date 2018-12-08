@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;capter5_logistic/src/LogRegres-gj.py&apos; to &apos;logistic_test03.py&apos;" description="Rename resource &apos;LogRegres-gj.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/LogRegres-gj.py" name="logistic_test03.py" stamp="1542282035366" updateReferences="true"/>
+</session>

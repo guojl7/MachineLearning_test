@@ -1,0 +1,38 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter8_LinearRegression\com.python.pydev.analysis\v2_indexcache
+LinearRegression_test03_Abalone|1543217975915880000|E:\java_test\capter8_LinearRegression\src\LinearRegression_test03_Abalone.py
+LinearRegression_test05_lego|1543235089376192000|E:\java_test\capter8_LinearRegression\src\LinearRegression_test05_lego.py
+LinearRegression_test04_RidgeAndStageWise|1543220538824729000|E:\java_test\capter8_LinearRegression\src\LinearRegression_test04_RidgeAndStageWise.py
+LinearRegression_test02_LWLR|1543154135495838000|E:\java_test\capter8_LinearRegression\src\LinearRegression_test02_LWLR.py
+LinearRegression_test01_StandRegres|1543157768394246000|E:\java_test\capter8_LinearRegression\src\LinearRegression_test01_StandRegres.py
+LinearRegression|1543235330771676000|E:\java_test\capter8_LinearRegression\src\LinearRegression.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+6=LinearRegression_test03_Abalone
+5=LinearRegression_test05_lego
+3=LinearRegression_test04_RidgeAndStageWise
+2=LinearRegression_test02_LWLR
+4=LinearRegression_test01_StandRegres
+1=LinearRegression
+-- END DICTIONARY
+-- START TREE 1
+13
+cro|1|crossValidation!10@
+loa|1|loadDataSet!10@
+lwl|2|lwlr!10@lwlrTest!10@
+plo|5|plotDataSet!10@plotlwlrRegression!18@plotwMat!26@plotstageWiseMat!26@plotRegression!34@
+reg|1|regularize!10@
+rid|2|ridgeRegres!10@ridgeTest!10@
+rss|1|rssError!10@
+scr|1|scrapePage!42@
+set|1|setDataCollect!42@
+sta|2|stageWise!10@standRegres!10@
+use|3|usesklearn!42@useCrossValidationRidgeRegres!42@useStandRegres!42@
+ws|1|ws!51@
+yha|4|yHat1!51@yHat!51@yHat10!51@yHat01!51@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

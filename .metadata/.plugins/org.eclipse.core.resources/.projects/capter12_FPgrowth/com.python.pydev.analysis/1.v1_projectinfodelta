@@ -1,0 +1,15 @@
+INSTUPFPgrowth
+E:\java_test\capter12_FPgrowth\src\FPgrowth.py
+INFOS:&&1|1|2|0&&2|3|2|1&&3|4|2|5&&3|6|2|5&&3|7|2|5&&3|8|2|5&&3|9|2|5&&2|10|2|1&&2|11|2|1&&2|12|2|0
+parent=8
+createTree=12
+treeNode.__init__=5
+count=6
+disp=11
+nodeLink=7
+FPgrowth=2
+children=9
+name=4
+treeNode=1
+__init__=3
+inc=10

@@ -1,0 +1,29 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter5_logistic\com.python.pydev.analysis\v2_indexcache
+logistic_test01|1542283578105529000|E:\java_test\capter5_logistic\src\logistic_test01.py
+logistic|1542285091109152000|E:\java_test\capter5_logistic\src\logistic.py
+logistic_test02|1542284985479602000|E:\java_test\capter5_logistic\src\logistic_test02.py
+logistic_test03|1542284937658474000|E:\java_test\capter5_logistic\src\logistic_test03.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+3=logistic_test01
+1=logistic
+2=logistic_test02
+4=logistic_test03
+-- END DICTIONARY
+-- START TREE 1
+8
+cla|1|classifyVector!10@
+col|2|colicTest!18@colicSklearn!18@
+gra|2|gradAscent!10@Gradient_Ascent_test!10@
+loa|2|loadDataSet!26@loadDataSet!34@
+num|1|numIter!35@
+plo|4|plotDataSet!26@plotBestFit!34@plotBestFit!26@plotWeights!34@
+sig|1|sigmoid!10@
+sto|3|stocGradAscent0!10@stocGradAscent11!10@stocGradAscent1!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,28 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\forTest\com.python.pydev.analysis\v2_indexcache
+test_003_debug|1543413275110039000|E:\java_test\forTest\src\test_003_debug.py
+test_001_nonzero|1542955303873354000|E:\java_test\forTest\src\test_001_nonzero.py
+test_002_PrintChinese|1542955172160903000|E:\java_test\forTest\src\test_002_PrintChinese.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+2=test_003_debug
+4=ForceStr
+1=test_002_PrintChinese
+3=test_001_nonzero
+-- END DICTIONARY
+-- START TREE 1
+7
+a|2|a!11@a!19@
+b1|2|b1!27@b1!19@
+b2|2|b2!27@b2!19@
+dat|1|data!11@
+for|1|ForceStr!9@
+mod|1|mode!18@
+swi|1|switch_container!10@
+-- END TREE
+-- START TREE 2
+1
+__r|1|__repr__!4&10@
+-- END TREE

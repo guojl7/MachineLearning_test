@@ -1,0 +1,12 @@
+#-*- coding:utf-8 -*-
+import numpy as np
+import kMeans
+
+
+if __name__ == '__main__':
+    train_filename = 'testSet.txt'
+    train_Data = kMeans.loadDataSet(train_filename)
+    train_Mat = np.mat(train_Data)
+    tree = TreeRegression.createTree(train_Mat, TreeRegression.modelLeaf, TreeRegression.modelErr)
+    print('ģ����:')
+    print(tree)
