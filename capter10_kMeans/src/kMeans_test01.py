@@ -1,0 +1,14 @@
+#-*- coding:utf-8 -*-
+import numpy as np
+import kMeans
+
+if __name__ == '__main__':
+    dataMat = np.mat(kMeans.loadDataSet('testSet.txt'))
+    myCentroids, clustAssing = kMeans.kMeans(dataMat, 4)
+    print('K均值算法，质心：%r' % myCentroids)
+    print('K均值算法，索引以及储存误差： %r' % clustAssing)
+    
+    dataMat3 = np.mat(kMeans.loadDataSet('testSet2.txt'))
+    myCentroids3, clustAssing3 = kMeans.biKmeans(dataMat3, 3)
+    print('二分K-均值算法，质心：%r' % myCentroids3)
+    print('二分K-均值算法，索引以及储存误差： %r' % clustAssing3)

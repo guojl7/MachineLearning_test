@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/AdaBoost.py=utf-8
+encoding//src/AdaBoost_test01_SimpData.py=utf-8
+encoding//src/AdaBoost_test02_HorseAdaboost.py=utf-8
+encoding//src/AdaBoost_test03_HorseAdaboost_Standard.py=utf-8
+encoding//src/AdaBoost_test04_ROC.py=utf-8
