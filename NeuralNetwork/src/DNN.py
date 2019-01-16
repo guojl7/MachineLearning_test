@@ -32,7 +32,7 @@ class FullConnectedLayer():
     delta_array: 从上一层传递过来的误差项
     '''
     def backward(self, delta_array):
-        self.delta = np.multiply(self.activator.backward(self.input), np.dot(self.W.T, delta_array))
+        self.delta = self.activator.backward(self.input) * np.dot(self.W.T, delta_array)
         self.W_grad = np.dot(delta_array, self.input.T)
         self.b_grad = delta_array
     
@@ -83,7 +83,7 @@ class Network():
         self.update_weight()
 
     def calc_gradient(self, label_array):
-        delta = np.multiply(self.layers[-1].activator.backward(self.layers[-1].output), (label_array - self.layers[-1].output))
+        delta = self.layers[-1].activator.backward(self.layers[-1].output)*(label_array - self.layers[-1].output)
         for layer in self.layers[::-1]:
             layer.backward(delta)
             delta = layer.delta
