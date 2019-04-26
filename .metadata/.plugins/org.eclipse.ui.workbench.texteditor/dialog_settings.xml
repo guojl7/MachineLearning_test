@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="textParse" key="selection"/>
+		<item value="ReLU" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="textParse"/>
-			<item value="loadExData"/>
-			<item value="pntRules"/>
-			<item value="crossValidation"/>
-			<item value="regularize"/>
-			<item value="plotwMat"/>
-			<item value="ridgeTest"/>
-			<item value="classify"/>
+			<item value="relu"/>
+			<item value="Relu6Grad"/>
+			<item value="_relu6_grad"/>
+			<item value="_relu6"/>
+			<item value="add_op_list"/>
+			<item value="shrink_axis_mask"/>
+			<item value="OpDefLibrary"/>
+			<item value="ZerosLike"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -23,8 +23,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="273" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
-		<item value="400" key="DIALOG_HEIGHT"/>
+		<item value="424" key="DIALOG_HEIGHT"/>
 		<item value="787" key="DIALOG_X_ORIGIN"/>
-		<item value="187" key="DIALOG_Y_ORIGIN"/>
+		<item value="163" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

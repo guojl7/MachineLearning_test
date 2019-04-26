@@ -1,0 +1,10 @@
+MODULES_MANAGER_V2
+CNN|E:\MachineLearning_base\NeuralNetwork\src\CNN.py
+CNN_test01|E:\MachineLearning_base\NeuralNetwork\src\CNN_test01.py
+DNN|E:\MachineLearning_base\NeuralNetwork\src\DNN.py
+DNN_test01|E:\MachineLearning_base\NeuralNetwork\src\DNN_test01.py
+DNN_test02|E:\MachineLearning_base\NeuralNetwork\src\DNN_test02.py
+activators|E:\MachineLearning_base\NeuralNetwork\src\activators.py
+neuralNetwork|E:\MachineLearning_base\NeuralNetwork\src\neuralNetwork.py
+neuralNetwork_test01|E:\MachineLearning_base\NeuralNetwork\src\neuralNetwork_test01.py
+rnn|E:\MachineLearning_base\NeuralNetwork\src\rnn.py

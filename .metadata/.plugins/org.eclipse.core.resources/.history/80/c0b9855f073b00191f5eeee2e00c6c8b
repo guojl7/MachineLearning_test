@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+from ResNetModel import loadImage
+
+
+
+if __name__ == '__main__':
+    directory_name = 'E:\\raw_data\\drawings\\IMAGES'
+    target_size = (204, 204)
+    load_count = 100
+    array_of_img = loadImage.load_image(directory_name, target_size, load_count)
+    
+    load_count = 1000

@@ -1,0 +1,341 @@
+# -*- coding:UTF-8 -*-
+import gc
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, BatchNormalization
+from sklearn import preprocessing
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+from sklearn.model_selection import train_test_split
+from scipy.stats import norm, rankdata
+from sklearn.metrics import roc_auc_score, classification_report
+
+def feature_Engineering(train_validate_df_org, test_df_org):
+    '''
+    #检查是否有缺失数据
+    for i in range(0, train_validate_df_org.shape[1]):
+        if False != train_validate_df_org.isnull().any().values[i]:
+            print(train_validate_df_org.isnull().any().keys()[i] + ' have null')
+    '''
+    '''
+    #绘制预测值比例
+    train_validate_df_org['target'].value_counts().plot.pie(autopct = '%1.2f%%')
+    '''
+    
+    train_validate_X = train_validate_df_org.ix[:, 2:]
+    train_validate_Y = train_validate_df_org.ix[:, 1:2]
+    test_X = test_df_org.ix[:, 1:]
+    
+    #combined_train_validate_test_X = train_validate_df_org.ix[:, 2:].append(test_df_org.ix[:, 1:])
+    test_length = test_df_org.shape[0]
+    train_validate_length = train_validate_df_org.shape[0]
+    feature_nums = train_validate_X.shape[1]
+    
+    # StandardScaler will subtract the mean from each value then scale to the unit variance    
+    scaler = preprocessing.StandardScaler()
+    for i in range(0, feature_nums):
+        train_validate_X[train_validate_X.columns[i]] = scaler.fit_transform(train_validate_X[train_validate_X.columns[i]].values.reshape(-1, 1))
+        test_X[test_X.columns[i]] = scaler.fit_transform(test_X[test_X.columns[i]].values.reshape(-1, 1))
+    '''
+    train_validate_X = combined_train_validate_test_X[0: train_validate_length]
+    train_validate_Y = train_validate_df_org.ix[:, 1:2]
+    test_X = combined_train_validate_test_X[train_validate_length: ]
+    '''
+    '''
+    #特征选择：卡方检验
+    drop_pvalue_stand = 0.05
+    train_validate_X_scaled = train_validate_X + train_validate_X.min().apply(lambda x: 0 if x > 0 else abs(x)) #转换成正数,如果最小值小于0，则加上最小值得绝对值
+    feature_model = SelectKBest(chi2, k = len(train_validate_X_scaled.ix[0,:]))#选择k个最佳特征
+    feature_model.fit_transform(train_validate_X_scaled, train_validate_Y)#data_X是特征数据，data_Y是标签数据，该函数可以选择出k个特征
+    scores = feature_model.scores_  #得分,越大说明越相关
+    pvalues = feature_model.pvalues_  #p-values,越小越相关  若p值小于0.05，则可以推翻H0（两者没有关系），推出H1（两者有关系）。
+    drop_feature_nums = 0
+    drop_columns = []
+    for i in range(0, len(pvalues)):
+        if drop_pvalue_stand < pvalues[i]:
+            drop_feature_nums+=1
+            drop_columns.append(train_validate_X_scaled.columns[i])
+            print('drop feature: ' + train_validate_X_scaled.columns[i] + ' drop_feature_num: ' + str(drop_feature_nums))
+    train_validate_X.drop(drop_columns, axis=1, inplace = True)
+    test_X.drop(drop_columns, axis=1, inplace = True)
+    '''
+    
+    train_data_X, validate_data_X, train_data_Y, validate_data_Y = train_test_split(np.array(train_validate_X), np.array(train_validate_Y), test_size=0.1, random_state=7)
+    
+    return train_data_X, train_data_Y, validate_data_X, validate_data_Y, np.array(test_X)
+
+
+def feature_Engineering1(train_validate_df_org, test_df_org):
+    '''
+    test_length = test_df_org.shape[0]
+    train_validate_length = train_validate_df_org.shape[0]
+    
+    test_df_org.pop('ID_code')
+    train_validate_df_org.pop('ID_code')
+    train_validate_Y = train_validate_df_org.pop('target')
+    
+    combined_train_validate_test_X = pd.concat([train_validate_df_org, test_df_org])
+    del train_validate_df_org, test_df_org
+    gc.collect()
+    
+    original_features = combined_train_validate_test_X.columns
+    
+    for col in combined_train_validate_test_X.columns:
+        # Normalize the data, so that it can be used in norm.cdf(), 
+        # as though it is a standard normal variable
+        combined_train_validate_test_X[col] = ((combined_train_validate_test_X[col] - combined_train_validate_test_X[col].mean()) / combined_train_validate_test_X[col].std()).astype('float32')
+        # Square
+        combined_train_validate_test_X[col+'^2'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # Cube
+        combined_train_validate_test_X[col+'^3'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # 4th power
+        combined_train_validate_test_X[col+'^4'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # Cumulative percentile (not normalized)
+        combined_train_validate_test_X[col+'_cp'] = rankdata(combined_train_validate_test_X[col]).astype('float32')
+        # Cumulative normal percentile
+        combined_train_validate_test_X[col+'_cnp'] = norm.cdf(combined_train_validate_test_X[col]).astype('float32')
+        print(col)
+    
+    new_features = set(combined_train_validate_test_X.columns) - set(original_features)
+    for col in new_features:
+        combined_train_validate_test_X[col] = ((combined_train_validate_test_X[col] - combined_train_validate_test_X[col].mean()) / combined_train_validate_test_X[col].std()).astype('float32')
+    
+    train_validate_X = combined_train_validate_test_X[0: train_validate_length]
+    test_X = combined_train_validate_test_X[train_validate_length: ]
+    
+    del combined_train_validate_test_X
+    gc.collect()
+    
+    train_data_X, validate_data_X, train_data_Y, validate_data_Y = train_test_split(np.array(train_validate_X), np.array(train_validate_Y), test_size=0.1, random_state=7)
+    np.savez("train_validate_test_data.npz", train_data_X, validate_data_X, train_data_Y, validate_data_Y, np.array(test_X))
+    '''
+    
+    r = np.load("./train_validate_test_data.npz")
+    train_data_X = r["arr_0"]
+    validate_data_X = r["arr_1"]
+    train_data_Y = r["arr_2"]
+    validate_data_Y = r["arr_3"]
+    test_X = r["arr_4"]
+    
+    return train_data_X, train_data_Y, validate_data_X, validate_data_Y, np.array(test_X)
+
+def feature_Engineering2(train_validate_df_org, test_df_org):
+    test_length = test_df_org.shape[0]
+    train_validate_length = train_validate_df_org.shape[0]
+    
+    test_df_org.pop('ID_code')
+    train_validate_df_org.pop('ID_code')
+    train_validate_Y = train_validate_df_org.pop('target')
+    
+    combined_train_validate_test_X = pd.concat([train_validate_df_org, test_df_org])
+    del train_validate_df_org, test_df_org
+    gc.collect()
+    
+    original_features = combined_train_validate_test_X.columns
+    
+    for col in combined_train_validate_test_X.columns:
+        # Normalize the data, so that it can be used in norm.cdf(), 
+        # as though it is a standard normal variable
+        combined_train_validate_test_X[col] = ((combined_train_validate_test_X[col] - combined_train_validate_test_X[col].mean()) / combined_train_validate_test_X[col].std()).astype('float32')
+
+    train_validate_X = combined_train_validate_test_X[0: train_validate_length]
+    test_X = combined_train_validate_test_X[train_validate_length: ]
+    
+    del combined_train_validate_test_X
+    gc.collect()
+    
+    train_data_X, validate_data_X, train_data_Y, validate_data_Y = train_test_split(np.array(train_validate_X), np.array(train_validate_Y), test_size=0.1, random_state=7)
+    
+    return train_data_X, train_data_Y, validate_data_X, validate_data_Y, np.array(test_X)
+
+def feature_Engineering3(train_validate_df_org, test_df_org):
+    r = np.load("./train_validate_test_data.npz")
+    train_data_X = r["arr_0"]
+    validate_data_X = r["arr_1"]
+    train_data_Y = r["arr_2"]
+    validate_data_Y = r["arr_3"]
+    test_X = r["arr_4"]
+    
+    #对标签为1的复制9次放回训练集
+    index = [i for i, x in enumerate(train_data_Y) if x == 1]
+    train_data_X = np.concatenate((train_data_X, train_data_X[index].repeat(9, axis=0)), axis=0)
+    train_data_Y = np.concatenate((train_data_Y, train_data_Y[index].repeat(9, axis=0)), axis=0)
+    
+    return train_data_X, train_data_Y, validate_data_X, validate_data_Y, np.array(test_X)
+
+def feature_Engineering4(train_validate_df_org, test_df_org):
+    m1 = [81, 139, 12, 146, 76, 174, 21, 80, 166, 165, 13, 148, 198, 34, 115, 109, 44, 169, 149, 92, 108, 154, 33, 9, 192, 122, 121, 86, 123, 107, 127, 36, 172, 75, 177, 197, 87, 56, 93, 188, 131, 186, 141, 43, 104, 150, 31, 132, 23, 114, 58, 28, 116, 85, 194, 83]
+    m2 = [6, 110, 53, 26, 22, 99, 190, 2, 133, 0, 179, 1, 40, 184, 170, 78, 191, 94, 67, 18, 173, 118, 164, 89, 91, 147, 95, 35, 155, 106, 71, 157, 48, 162, 180, 163, 5, 145, 119, 32, 130, 49, 167, 90, 24, 195, 135, 151, 125, 128, 111, 52, 137, 70, 105, 51, 112, 199, 66, 82, 196, 175, 11, 74, 144, 8]
+    s = [26, 81, 139, 110, 12, 2, 22, 80, 53, 146, 179, 198, 99, 44, 0, 174, 76, 6, 166, 148, 133, 191, 40, 109, 190, 13, 123, 170, 165, 86, 108, 94, 21, 78, 1, 154, 184, 163, 91, 95, 75, 18, 93, 157, 89, 34, 119, 180, 115, 164, 92, 155, 9, 147, 56, 188, 122, 33, 130, 169, 5, 135, 51, 125, 141, 106, 151, 197, 162, 195, 172, 127, 121, 67, 111, 177, 173, 145, 132, 32, 43, 114, 131, 49, 36, 167, 88, 35, 107, 87, 175, 83, 149, 118, 196, 168, 150]
+    
+    test_length = test_df_org.shape[0]
+    train_validate_length = train_validate_df_org.shape[0]
+    
+    test_df_org.pop('ID_code')
+    train_validate_df_org.pop('ID_code')
+    train_validate_Y = train_validate_df_org.pop('target')
+    
+    combined_train_validate_test_X = pd.concat([train_validate_df_org, test_df_org])
+    del train_validate_df_org, test_df_org
+    gc.collect()
+    
+    original_features = combined_train_validate_test_X.columns
+    combined_train_validate_test_X = preprocessing.scale(combined_train_validate_test_X)
+    
+    '''
+    for col in combined_train_validate_test_X.columns:
+        # Square
+        combined_train_validate_test_X[col+'^2'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # Cube
+        combined_train_validate_test_X[col+'^3'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # 4th power
+        combined_train_validate_test_X[col+'^4'] = combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col] * combined_train_validate_test_X[col]
+        # Cumulative percentile (not normalized)
+        combined_train_validate_test_X[col+'_cp'] = rankdata(combined_train_validate_test_X[col]).astype('float32')
+        # Cumulative normal percentile
+        combined_train_validate_test_X[col+'_cnp'] = norm.cdf(combined_train_validate_test_X[col]).astype('float32')
+        print(col)
+    '''
+    
+    new_features = set(combined_train_validate_test_X.columns) - set(original_features)
+    for col in new_features:
+        combined_train_validate_test_X[col] = ((combined_train_validate_test_X[col] - combined_train_validate_test_X[col].mean()) / combined_train_validate_test_X[col].std()).astype('float32')
+    
+    combined_train_validate_test_X['extern'] = np.std(x[:, s], axis=1) + np.mean(x[:, m2], axis=1) - np.mean(x[:, m1], axis=1)
+    
+    train_validate_X = combined_train_validate_test_X[0: train_validate_length]
+    test_X = combined_train_validate_test_X[train_validate_length: ]
+    
+    del combined_train_validate_test_X
+    gc.collect()
+    
+    train_data_X, validate_data_X, train_data_Y, validate_data_Y = train_test_split(np.array(train_validate_X), np.array(train_validate_Y), test_size=0.1, random_state=7)
+    
+    return train_data_X, train_data_Y, validate_data_X, validate_data_Y, np.array(test_X)
+
+def build_model1(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(256, input_shape = (train_data_X.shape[1],), activation='selu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='selu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='selu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=32, epochs=10)
+    
+    return model
+
+def build_model2(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(1024, input_shape = (train_data_X.shape[1],), activation='selu'))
+    model.add(Dense(1024, activation='relu'))
+    model.add(Dropout(0.25))
+    model.add(Dense(1024, activation='relu'))
+    model.add(Dropout(0.25))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=32, epochs=10)
+    
+    return model
+
+def build_model3(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(1024, input_shape = (train_data_X.shape[1],), activation='selu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(512, activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(128, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=32, epochs=10)
+    
+    return model
+
+def build_model4(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(256, input_shape = (train_data_X.shape[1],), activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=32, epochs=10)
+    
+    return model
+
+def build_model5(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(256, input_shape = (train_data_X.shape[1],), activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=16, epochs=10)
+    
+    return model
+
+def build_model6(train_data_X, train_data_Y):
+    # build the model
+    print('Build model...')
+    optimizer = optimizers.Adam(lr=0.001)
+    model = Sequential()
+    #model.add(BatchNormalization(input_shape = (train_data_X.shape[1],)))
+    model.add(Dense(256, input_shape = (train_data_X.shape[1],), activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(Dense(256, activation='relu'))
+    model.add(Dense(1, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])
+    model.fit(train_data_X, train_data_Y, batch_size=8, epochs=10)
+    
+    return model
+
+if __name__ == '__main__':
+    train_validate_df_org = pd.read_csv('./train.csv')
+    test_df_org = pd.read_csv('./test.csv')
+    ID_code = test_df_org['ID_code']
+    
+    #特征工程处理
+    train_data_X, train_data_Y, validate_data_X, validate_data_Y, test_data_X = feature_Engineering1(train_validate_df_org, test_df_org)
+    model = build_model5(train_data_X, train_data_Y)
+    
+    print(model.evaluate(train_data_X, train_data_Y))
+    print(model.evaluate(validate_data_X, validate_data_Y))
+    
+    train_predict_Y = model.predict(train_data_X)
+    validate_predict_Y = model.predict(validate_data_X)
+    validate_predict_Y_label = model.predict_classes(validate_data_X)
+    print('train AUC:' + str(roc_auc_score(train_data_Y, train_predict_Y)))
+    print('predict AUC:' + str(roc_auc_score(validate_data_Y, validate_predict_Y)))
+    
+    print(classification_report(validate_data_Y, validate_predict_Y_label))
+
+    test_data_Y = model.predict(test_data_X)
+    pd.DataFrame({"ID_code": ID_code, "target": test_data_Y.reshape(-1)}).to_csv('test_Y.csv', index = False, header = True)
+    
+    print()

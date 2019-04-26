@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/ResNetModel/convertH5ToPd.py=utf-8
+encoding//src/ResNetModel/data_wash.py=utf-8
+encoding//src/ResNetModel/loadImage.py=utf-8
+encoding//src/ResNetModel/resnet50.py=utf-8
+encoding//src/ResNetModel/resnet50_test02.py=utf-8
+encoding//src/yolo_tensorflow/yolo/yolo_net.py=utf-8

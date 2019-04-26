@@ -1,0 +1,13 @@
+MODULES_MANAGER_V2
+audio_conv_utils|E:\MachineLearning_base\DeepLearningModels\src\audio_conv_utils.py
+imagenet_utils|E:\MachineLearning_base\DeepLearningModels\src\imagenet_utils.py
+inception_resnet_v2|E:\MachineLearning_base\DeepLearningModels\src\inception_resnet_v2.py
+inception_v3|E:\MachineLearning_base\DeepLearningModels\src\inception_v3.py
+mobilenet|E:\MachineLearning_base\DeepLearningModels\src\mobilenet.py
+music_tagger_crnn|E:\MachineLearning_base\DeepLearningModels\src\music_tagger_crnn.py
+vgg16|E:\MachineLearning_base\DeepLearningModels\src\vgg16.py
+vgg19|E:\MachineLearning_base\DeepLearningModels\src\vgg19.py
+xception|E:\MachineLearning_base\DeepLearningModels\src\xception.py
+yolo_tensorflow.test|E:\MachineLearning_base\DeepLearningModels\src\yolo_tensorflow\test.py
+yolo_tensorflow.yolo.config|E:\MachineLearning_base\DeepLearningModels\src\yolo_tensorflow\yolo\config.py
+yolo_tensorflow.yolo.yolo_net|E:\MachineLearning_base\DeepLearningModels\src\yolo_tensorflow\yolo\yolo_net.py

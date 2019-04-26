@@ -1,5 +1,6 @@
 MODULES_MANAGER_V2
-logistic|E:\java_test\capter5_logistic\src\logistic.py
-logistic_test01|E:\java_test\capter5_logistic\src\logistic_test01.py
-logistic_test02|E:\java_test\capter5_logistic\src\logistic_test02.py
-logistic_test03|E:\java_test\capter5_logistic\src\logistic_test03.py
+logistic|E:\MachineLearning_base\capter5_logistic\src\logistic.py
+logistic_test01|E:\MachineLearning_base\capter5_logistic\src\logistic_test01.py
+logistic_test02|E:\MachineLearning_base\capter5_logistic\src\logistic_test02.py
+logistic_test03|E:\MachineLearning_base\capter5_logistic\src\logistic_test03.py
+logistic_test04_findBestLogisticParm|E:\MachineLearning_base\capter5_logistic\src\logistic_test04_findBestLogisticParm.py

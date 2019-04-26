@@ -1,0 +1,23 @@
+# -*-coding:utf-8 -*-
+import numpy
+import scipy.special
+import matplotlib.pyplot
+import part2_neural_network
+
+
+if __name__ == '__main__':
+    # number of input, hidden and output nodes
+    input_nodes = 784
+    hidden_nodes = 200
+    output_nodes = 10
+    
+    # learning rate
+    learning_rate = 0.1
+    
+    # create instance of neural network
+    n = part2_neural_network.neuralNetwork(input_nodes,hidden_nodes,output_nodes, learning_rate)
+    
+    # load the mnist training data CSV file into a list
+    training_data_file = open("mnist_dataset/mnist_train.csv", 'r')
+    training_data_list = training_data_file.readlines()
+    training_data_file.close()

@@ -1,0 +1,5 @@
+MODULES_MANAGER_V2
+DNN|E:\MachineLearning_base\NeuralNetwork_handWritten\src\DNN.py
+mnist|E:\MachineLearning_base\NeuralNetwork_handWritten\src\mnist.py
+neuralNetwork|E:\MachineLearning_base\NeuralNetwork_handWritten\src\neuralNetwork.py
+neuralNetwork_test01|E:\MachineLearning_base\NeuralNetwork_handWritten\src\neuralNetwork_test01.py

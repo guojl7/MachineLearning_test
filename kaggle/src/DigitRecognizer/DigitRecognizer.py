@@ -13,6 +13,9 @@ from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ReduceLROnPlateau
 
+#import os
+#os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 batch_size = 86
 num_classes = 10 
@@ -75,7 +78,7 @@ history = model.fit_generator(datagen.flow(trainX, trainY, batch_size=batch_size
                               epochs = epochs, 
                               validation_data = (validationX, validationY),
                               verbose = 2, 
-                              steps_per_epoch=trainX.shape[0] // batch_size,
+                              steps_per_epoch=trainX.shape[0] // batch_size, 
                               callbacks=[learning_rate_reduction])
 
 #model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=batch_size, epochs=epochs, verbose=2)

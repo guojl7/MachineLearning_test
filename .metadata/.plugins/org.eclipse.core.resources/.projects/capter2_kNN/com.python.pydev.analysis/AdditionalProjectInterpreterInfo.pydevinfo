@@ -1,11 +1,11 @@
 -- VERSION_4
 -- START DISKCACHE_2
-E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter2_kNN\com.python.pydev.analysis\v2_indexcache
-kNN_base|1541919580322513000|E:\java_test\capter2_kNN\src\kNN_base.py
-kNN_test04|1541024932000000000|E:\java_test\capter2_kNN\src\kNN_test04.py
-kNN_test03|1541919545730364000|E:\java_test\capter2_kNN\src\kNN_test03.py
-kNN_test02|1541919439335442000|E:\java_test\capter2_kNN\src\kNN_test02.py
-kNN_test01|1542638164956322000|E:\java_test\capter2_kNN\src\kNN_test01.py
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\capter2_kNN\com.python.pydev.analysis\v2_indexcache
+kNN_base|1541919580322513000|E:\MachineLearning_base\capter2_kNN\src\kNN_base.py
+kNN_test04|1541024932000000000|E:\MachineLearning_base\capter2_kNN\src\kNN_test04.py
+kNN_test03|1541919545730364000|E:\MachineLearning_base\capter2_kNN\src\kNN_test03.py
+kNN_test02|1541919439335442000|E:\MachineLearning_base\capter2_kNN\src\kNN_test02.py
+kNN_test01|1542638164956322000|E:\MachineLearning_base\capter2_kNN\src\kNN_test01.py
 -- END DISKCACHE
 -- START DICTIONARY
 5

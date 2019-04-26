@@ -1,0 +1,104 @@
+-- VERSION_4
+-- START DISKCACHE_2
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\NeuralNetwork_handWritten\com.python.pydev.analysis\v2_indexcache
+DNN_test01|1545706870181616000|E:\MachineLearning_base\NeuralNetwork_handWritten\src\DNN_test01.py
+neuralNetwork_test01|1545706919181529000|E:\MachineLearning_base\NeuralNetwork_handWritten\src\neuralNetwork_test01.py
+DNN_test02|1545706870181616000|E:\MachineLearning_base\NeuralNetwork_handWritten\src\DNN_test02.py
+DNN|1545706541791204000|E:\MachineLearning_base\NeuralNetwork_handWritten\src\DNN.py
+neuralNetwork|1545310715581233000|E:\MachineLearning_base\NeuralNetwork_handWritten\src\neuralNetwork.py
+-- END DISKCACHE
+-- START DICTIONARY
+17
+16=Network.__init__
+15=FullConnectedLayer.forward
+4=DNN
+10=neuralNetwork.__init__
+7=Loader
+5=neuralNetwork
+1=neuralNetwork_test01
+3=DNN_test01
+2=DNN_test02
+8=FullConnectedLayer
+11=FullConnectedLayer.backward
+12=SigmoidActivator
+13=Loader.__init__
+9=Network
+17=LabelLoader
+14=ImageLoader
+6=FullConnectedLayer.__init__
+-- END DICTIONARY
+-- START TREE 1
+26
+all|1|all_values!11@
+con|0|
+cor|1|correct_label!11@
+epo|1|epochs!11@
+eva|2|evaluate!18@evaluate!26@
+ful|1|FullConnectedLayer!33@
+get|6|get_result!18@get_result!26@get_training_data_set!26@get_test_data_set!18@get_test_data_set!26@get_training_data_set!18@
+gra|0|
+hid|1|hidden_nodes!11@
+ima|2|ImageLoader!25@ImageLoader!17@
+inp|4|input_nodes!11@inputs_plusx_img!11@inputs_minusx_img!11@inputs!11@
+lab|3|label!11@LabelLoader!25@LabelLoader!17@
+lay|0|
+lea|1|learning_rate!11@
+loa|2|Loader!17@Loader!25@
+n|1|n!11@
+net|2|Network!33@netWorkBackWards!10@
+neu|1|neuralNetwork!41@
+nod|0|
+nor|0|
+out|2|output_nodes!11@outputs!11@
+sco|2|scorecard_array!11@scorecard!11@
+sig|1|SigmoidActivator!33@
+tar|1|targets!11@
+tes|3|test_data_list!11@test_data_file!11@testMyOwnImages!10@
+tra|4|train_and_evaluate!26@train_and_evaluate!18@training_data_list!11@training_data_file!11@
+-- END TREE
+-- START TREE 2
+43
+W|1|W!6&35@
+__i|5|__init__!5&42@__init__!7&18@__init__!8&34@__init__!9&34@__init__!7&26@
+__s|0|
+act|2|activator!6&35@activation_function!10&43@
+add|0|
+app|0|
+b|1|b!6&35@
+b_g|1|b_grad!11&35@
+bac|3|backward!8&34@backward!12&34@backquery!5&42@
+cal|1|calc_gradient!9&34@
+con|0|
+cou|2|count!13&27@count!13&19@
+del|1|delta!11&35@
+den|0|
+dow|0|
+dum|1|dump!9&34@
+for|2|forward!8&34@forward!12&34@
+get|6|get_picture!14&26@get_file_content!7&18@get_file_content!7&26@get_one_sample!14&18@get_one_sample!14&26@get_picture!14&18@
+gra|1|gradient_check!9&34@
+hno|1|hnodes!10&43@
+ino|1|inodes!10&43@
+inp|2|input!15&35@input_size!6&35@
+inv|1|inverse_activation_function!10&43@
+lay|1|layers!16&35@
+loa|4|load!14&26@load!17&26@load!14&18@load!17&18@
+los|1|loss!9&34@
+lr|1|lr!10&43@
+mas|0|
+nod|0|
+nor|2|norm!17&18@norm!17&26@
+ono|1|onodes!10&43@
+out|3|output_size!6&35@output!6&35@output!15&35@
+pat|2|path!13&27@path!13&19@
+pre|1|predict!9&34@
+que|1|query!5&42@
+set|0|
+tra|3|train_one_sample!9&34@train!5&42@train!9&34@
+upd|2|update!8&34@update_weight!9&34@
+ups|0|
+w_g|1|W_grad!11&35@
+wei|0|
+who|1|who!10&43@
+wih|1|wih!10&43@
+-- END TREE

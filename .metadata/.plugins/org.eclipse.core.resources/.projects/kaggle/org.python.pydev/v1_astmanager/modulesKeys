@@ -1,0 +1,5 @@
+MODULES_MANAGER_V2
+DigitRecognizer.DigitRecognizer|E:\MachineLearning_base\kaggle\src\DigitRecognizer\DigitRecognizer.py
+SantanderCustomerTransactionPrediction.SantanderCustomerTransactionPrediction|E:\MachineLearning_base\kaggle\src\SantanderCustomerTransactionPrediction\SantanderCustomerTransactionPrediction.py
+SantanderCustomerTransactionPrediction.feature|E:\MachineLearning_base\kaggle\src\SantanderCustomerTransactionPrediction\feature.py
+Titanic.Titanic|E:\MachineLearning_base\kaggle\src\Titanic\Titanic.py

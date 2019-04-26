@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="SearchIndexPage">
-		<item value="1" key="HISTORY_SIZE"/>
+		<item value="5" key="HISTORY_SIZE"/>
+		<section name="HISTORY4">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="0" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="" key="scopeData"/>
+			<item value="shrink_axis_mask" key="textPattern"/>
+			<item value="*" key="filenamePattern"/>
+		</section>
+		<section name="HISTORY2">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="2" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="" key="scopeData"/>
+			<item value="ImageDataGenerator" key="textPattern"/>
+			<item value="*" key="filenamePattern"/>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="2" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="" key="scopeData"/>
+			<item value="shrink_axis_mask" key="textPattern"/>
+			<item value="*" key="filenamePattern"/>
+		</section>
 		<section name="HISTORY0">
 			<item value="false" key="isCaseSensitive"/>
 			<item value="1" key="scope"/>
@@ -10,15 +34,23 @@
 			<item value="createDataSet" key="textPattern"/>
 			<item value="*" key="filenamePattern"/>
 		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="1" key="scope"/>
+			<item value="false" key="isWholeWord"/>
+			<item value="" key="scopeData"/>
+			<item value="增强" key="textPattern"/>
+			<item value="*" key="filenamePattern"/>
+		</section>
 	</section>
 	<section name="com.python.pydev.analysis.actions.GlobalsTwoPanelElementSelector2">
 		<item value="true" key="ShowStatusLine"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode interpreter=&quot;D:\setup_place_0\Anaconda2\envs\python3\python.exe&quot; interpreter_type=&quot;0&quot; module_name=&quot;tensorflow.core.framework.node_def_pb2&quot; name=&quot;_NODEDEF&quot; path=&quot;&quot; type=&quot;3&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
 		<section name="DialogBoundsSettings">
-			<item value="600" key="DIALOG_WIDTH"/>
-			<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
-			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="646" key="DIALOG_WIDTH"/>
+			<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+			<item value="581" key="DIALOG_HEIGHT"/>
 			<item value="671" key="DIALOG_X_ORIGIN"/>
 			<item value="188" key="DIALOG_Y_ORIGIN"/>
 		</section>

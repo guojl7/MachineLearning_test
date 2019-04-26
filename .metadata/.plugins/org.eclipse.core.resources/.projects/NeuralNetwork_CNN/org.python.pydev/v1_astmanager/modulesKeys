@@ -1,0 +1,10 @@
+MODULES_MANAGER_V2
+expand_mnist|E:\MachineLearning_base\NeuralNetwork_CNN\src\expand_mnist.py
+mnist_loader|E:\MachineLearning_base\NeuralNetwork_CNN\src\mnist_loader.py
+network1|E:\MachineLearning_base\NeuralNetwork_CNN\src\network1.py
+network1_test01_SVN_DNN|E:\MachineLearning_base\NeuralNetwork_CNN\src\network1_test01_SVN_DNN.py
+network2|E:\MachineLearning_base\NeuralNetwork_CNN\src\network2.py
+network2_test01|E:\MachineLearning_base\NeuralNetwork_CNN\src\network2_test01.py
+network3|E:\MachineLearning_base\NeuralNetwork_CNN\src\network3.py
+network3_test01|E:\MachineLearning_base\NeuralNetwork_CNN\src\network3_test01.py
+network3_test02|E:\MachineLearning_base\NeuralNetwork_CNN\src\network3_test02.py

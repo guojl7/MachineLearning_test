@@ -1,29 +1,43 @@
 -- VERSION_4
 -- START DISKCACHE_2
-E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter5_logistic\com.python.pydev.analysis\v2_indexcache
-logistic_test01|1542283578105529000|E:\java_test\capter5_logistic\src\logistic_test01.py
-logistic|1542285091109152000|E:\java_test\capter5_logistic\src\logistic.py
-logistic_test02|1542284985479602000|E:\java_test\capter5_logistic\src\logistic_test02.py
-logistic_test03|1542284937658474000|E:\java_test\capter5_logistic\src\logistic_test03.py
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\capter5_logistic\com.python.pydev.analysis\v2_indexcache
+logistic_test01|1544667130350355000|E:\MachineLearning_base\capter5_logistic\src\logistic_test01.py
+logistic|1544582167523134000|E:\MachineLearning_base\capter5_logistic\src\logistic.py
+logistic_test02|1544667144471889000|E:\MachineLearning_base\capter5_logistic\src\logistic_test02.py
+logistic_test03|1544599290271847000|E:\MachineLearning_base\capter5_logistic\src\logistic_test03.py
+logistic_test04_findBestLogisticParm|1544666930521716000|E:\MachineLearning_base\capter5_logistic\src\logistic_test04_findBestLogisticParm.py
 -- END DISKCACHE
 -- START DICTIONARY
-4
-3=logistic_test01
-1=logistic
-2=logistic_test02
-4=logistic_test03
+7
+4=logistic_test01
+2=logistic
+3=logistic_test02
+5=logistic_test03
+6=logisticParm.__init__
+7=logisticParm
+1=logistic_test04_findBestLogisticParm
 -- END DICTIONARY
 -- START TREE 1
-8
-cla|1|classifyVector!10@
-col|2|colicTest!18@colicSklearn!18@
-gra|2|gradAscent!10@Gradient_Ascent_test!10@
-loa|2|loadDataSet!26@loadDataSet!34@
-num|1|numIter!35@
-plo|4|plotDataSet!26@plotBestFit!34@plotBestFit!26@plotWeights!34@
-sig|1|sigmoid!10@
-sto|3|stocGradAscent0!10@stocGradAscent11!10@stocGradAscent1!10@
+11
+cal|1|calcAccurcy!10@
+cla|1|classifyVector!18@
+col|2|colicTest!26@colicSklearn!26@
+fin|1|findBestLogisticParm!10@
+gra|2|gradAscent!18@Gradient_Ascent_test!18@
+loa|2|loadDataSet!34@loadDataSet!42@
+log|1|logisticParm!9@
+num|1|numIter!43@
+plo|5|plotDataSet!34@plotBestFit!42@plotBestFit!10@plotBestFit!34@plotWeights!42@
+sig|1|sigmoid!18@
+sto|3|stocGradAscent0!18@stocGradAscent11!18@stocGradAscent1!18@
 -- END TREE
 -- START TREE 2
-0
+7
+C|1|C!6&11@
+__i|1|__init__!7&10@
+cla|1|class_weight!6&11@
+max|1|max_iter!6&11@
+mul|1|multi_class!6&11@
+pen|1|penalty!6&11@
+sol|1|solver!6&11@
 -- END TREE

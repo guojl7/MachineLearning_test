@@ -1,0 +1,7 @@
+import numpy
+# scipy.special for the sigmoid function expit()
+import scipy.special
+# library for plotting arrays
+import matplotlib.pyplot
+# ensure the plots are inside this notebook, not an external window
+%matplotlib inline

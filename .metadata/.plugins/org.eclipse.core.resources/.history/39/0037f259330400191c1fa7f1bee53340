@@ -1,0 +1,5 @@
+# -*-coding:utf-8 -*-
+import numpy
+import scipy.special
+import matplotlib.pyplot
+%matplotlib inline

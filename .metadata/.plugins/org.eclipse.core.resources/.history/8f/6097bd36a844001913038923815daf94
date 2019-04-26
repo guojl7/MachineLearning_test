@@ -1,0 +1,77 @@
+# -*- coding:UTF-8 -*-
+import jieba
+import jieba.analyse
+import logging
+import os
+from gensim.models import word2vec
+import numpy as np
+import re
+from nltk.tokenize import WordPunctTokenizer
+import string
+
+import nltk
+import os
+from nltk.stem import SnowballStemmer
+
+class prepare:
+    def fileread(self, filepath):  #读文件
+        with open(filepath, 'r', encoding = 'utf-8') as f:
+            raw = f.read()
+        return raw
+    
+    def sentoken(self,raw):        #分句子，去除前面一部分内容
+        return [line[72:] for line in raw]
+    
+    def wordlower(self, line):    #转换成小写
+        return line.lower()
+    
+    def cleanlines(self,line):   #去除标点等无用的符号
+        return re.sub('[^a-zA-Z0-9]',' ',line)
+        return line
+    
+    def wordtoken(self,sent):    #分词
+        wordsinstr = WordPunctTokenizer().tokenize(sent)
+        #wordsinstr=nltk.word_tokenize(sent)
+        return wordsinstr
+    
+    def cleanwords(self,words):   #去除停用词
+        cleanwords=[]
+        sr={}.fromkeys([line.strip() for line in open("停用词表的地址")])
+        for words in words: 
+            cleanwords+=[[w.lower() for w in words if w.lower() not in sr]]
+        return cleanwords   
+    
+    def stemwords(self,cleanwordslist):    #词干提取
+        temp=[]
+        stemwords=[]
+        stemmer=SnowballStemmer('english')
+        porter=nltk.PorterStemmer()
+        for words in cleanwordslist:
+            temp+=[[stemmer.stem(w) for w in words]]
+        for words in temp:
+            stemwords+=[[porter.stem(w) for w in words]]
+        return stemwords
+    
+    def wordstostring(self,stemwords):
+        strline=[]
+        for words in stemwords:
+            strline+=[w for w in words]
+        return strline
+    
+    def main(self, filepath):
+        raw=self.FileRead(filepath).strip()
+        sents=self.SenToken(raw)
+        #taggedLine=self.POSTagger(sents)#暂不启用词性标注
+        lowerLines=[self.wordlower(line) for line in sents]
+        cleanLines=[self.CleanLines(line) for line in lowerLines]
+        words=[self.WordTokener(line) for line in cleanLines]
+        #checkedWords=self.WordCheck(words)#暂不启用拼写检查
+        #cleanWords=self.CleanWords(words)
+        #stemWords=self.StemWords(cleanWords)
+        #cleanWords=self.CleanWords(stemWords)#第二次清理出现问题，暂不启用
+        #strLine=self.WordsToStr(stemWords)
+        #self.WriteResult(strLine,resultPath)#一个文件暂时存成一行
+
+if __name__ == '__main__':
+    enPre=prepare()
+    enPre.main('./data/word2vec/log_bpb_cpu_4_15_16_7_45')

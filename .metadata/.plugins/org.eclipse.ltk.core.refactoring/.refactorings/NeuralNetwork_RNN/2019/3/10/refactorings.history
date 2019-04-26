@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NeuralNetwork_RNN/src/LSTM创作Jazz&apos; to &apos;Jazz&apos;" description="Rename resource &apos;LSTM创作Jazz&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/LSTM创作Jazz" name="Jazz" stamp="1551854212239" updateReferences="true"/>
+</session>

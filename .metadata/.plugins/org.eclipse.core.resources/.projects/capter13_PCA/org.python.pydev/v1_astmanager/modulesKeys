@@ -1,8 +1,8 @@
 MODULES_MANAGER_V2
-extras.createFig1|E:\java_test\capter13_PCA\src\extras\createFig1.py
-extras.createFig2|E:\java_test\capter13_PCA\src\extras\createFig2.py
-extras.createFig3|E:\java_test\capter13_PCA\src\extras\createFig3.py
-extras.createFig4|E:\java_test\capter13_PCA\src\extras\createFig4.py
-pca|E:\java_test\capter13_PCA\src\pca.py
-pca_test01|E:\java_test\capter13_PCA\src\pca_test01.py
-pca_test02|E:\java_test\capter13_PCA\src\pca_test02.py
+extras.createFig1|E:\MachineLearning_base\capter13_PCA\src\extras\createFig1.py
+extras.createFig2|E:\MachineLearning_base\capter13_PCA\src\extras\createFig2.py
+extras.createFig3|E:\MachineLearning_base\capter13_PCA\src\extras\createFig3.py
+extras.createFig4|E:\MachineLearning_base\capter13_PCA\src\extras\createFig4.py
+pca|E:\MachineLearning_base\capter13_PCA\src\pca.py
+pca_test01|E:\MachineLearning_base\capter13_PCA\src\pca_test01.py
+pca_test02|E:\MachineLearning_base\capter13_PCA\src\pca_test02.py

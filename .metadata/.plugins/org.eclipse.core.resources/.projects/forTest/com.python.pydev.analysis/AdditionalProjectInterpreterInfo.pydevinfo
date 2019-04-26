@@ -1,26 +1,36 @@
 -- VERSION_4
 -- START DISKCACHE_2
-E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\forTest\com.python.pydev.analysis\v2_indexcache
-test_003_debug|1543413275110039000|E:\java_test\forTest\src\test_003_debug.py
-test_001_nonzero|1542955303873354000|E:\java_test\forTest\src\test_001_nonzero.py
-test_002_PrintChinese|1542955172160903000|E:\java_test\forTest\src\test_002_PrintChinese.py
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\forTest\com.python.pydev.analysis\v2_indexcache
+test_003_debug|1545913461154914000|E:\MachineLearning_base\forTest\src\test_003_debug.py
+test_001_nonzero|1547465231628013000|E:\MachineLearning_base\forTest\src\test_001_nonzero.py
+test_002_PrintChinese|1545911257454345000|E:\MachineLearning_base\forTest\src\test_002_PrintChinese.py
 -- END DISKCACHE
 -- START DICTIONARY
 4
-2=test_003_debug
+3=test_003_debug
 4=ForceStr
 1=test_002_PrintChinese
-3=test_001_nonzero
+2=test_001_nonzero
 -- END DICTIONARY
 -- START TREE 1
-7
-a|2|a!11@a!19@
-b1|2|b1!27@b1!19@
-b2|2|b2!27@b2!19@
+17
+a|1|a!11@
+b1|1|b1!19@
+b2|1|b2!19@
 dat|1|data!11@
+f|1|f!27@
 for|1|ForceStr!9@
-mod|1|mode!18@
+ite|1|iters!27@
+mod|1|mode!26@
+one|1|ones!19@
+r|1|r!27@
+rng|1|rng!27@
 swi|1|switch_container!10@
+t0|1|t0!27@
+t1|1|t1!27@
+tem|1|temp!19@
+vle|1|vlen!27@
+x|1|x!27@
 -- END TREE
 -- START TREE 2
 1

@@ -1,13 +1,40 @@
 -- VERSION_4
 -- START DISKCACHE_2
-E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter12_FPgrowth\com.python.pydev.analysis\v2_indexcache
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\capter12_FPgrowth\com.python.pydev.analysis\v2_indexcache
+FPgrowth_test02|1544202279551319000|E:\MachineLearning_base\capter12_FPgrowth\src\FPgrowth_test02.py
+FPgrowth|1544198758544665000|E:\MachineLearning_base\capter12_FPgrowth\src\FPgrowth.py
+FPgrowth_test01|1544201267533243000|E:\MachineLearning_base\capter12_FPgrowth\src\FPgrowth_test01.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+5
+2=FPgrowth_test02
+1=FPgrowth
+3=FPgrowth_test01
+5=treeNode.__init__
+4=treeNode
 -- END DICTIONARY
 -- START TREE 1
-0
+11
+cre|1|createTree!10@
+get|1|getLotsOfTweets!18@
+ini|1|initSet!27@
+lis|1|listOfTerms!19@
+loa|1|loadSimpDat!26@
+lot|1|lotsOtweets!19@
+min|2|minSup!27@mineTweets!18@
+myf|1|myFreqList!27@
+sim|1|simpDat!27@
+tex|1|textParse!18@
+tre|1|treeNode!9@
 -- END TREE
 -- START TREE 2
-0
+8
+__i|1|__init__!4&10@
+chi|1|children!5&11@
+cou|1|count!5&11@
+dis|1|disp!4&10@
+inc|1|inc!4&10@
+nam|1|name!5&11@
+nod|1|nodeLink!5&11@
+par|1|parent!5&11@
 -- END TREE

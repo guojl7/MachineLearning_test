@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/DigitRecognizer/DigitRecognizer.py=UTF-8
+encoding//src/SantanderCustomerTransactionPrediction/SantanderCustomerTransactionPrediction.py=UTF-8
+encoding//src/SantanderCustomerTransactionPrediction/feature.py=UTF-8
+encoding//src/Titanic/Titanic.py=UTF-8
+encoding//src/Titanic/Titanic_0.78.py=UTF-8
+encoding//src/Titanic/Titanic_0.789.py=UTF-8

@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+from ResNetModel import loadImage
+
+
+
+if __name__ == '__main__':

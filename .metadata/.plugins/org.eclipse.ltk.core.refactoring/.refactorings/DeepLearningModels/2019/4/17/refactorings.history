@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;DeepLearningModels/src/yolo&apos; to &apos;yolo1&apos;" description="Rename resource &apos;yolo&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/yolo" name="yolo1" stamp="1556161211738" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;DeepLearningModels/src/yolo_tensorflow/data/weight&apos; to &apos;weights&apos;" description="Rename resource &apos;weight&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/yolo_tensorflow/data/weight" name="weights" stamp="1556179235568" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NeuralNetwork_CNN/src/神经网络与深度学习.pdf&apos; to &apos;NeuralNetwork.pdf&apos;" description="Rename resource &apos;神经网络与深度学习.pdf&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/神经网络与深度学习.pdf" name="NeuralNetwork.pdf" stamp="1556067407700" updateReferences="true"/>
+</session>

@@ -1,0 +1,146 @@
+# -*- coding:UTF-8 -*-
+import jieba
+import jieba.analyse
+import logging
+import os
+from gensim.models import word2vec
+import numpy as np
+import re
+from nltk.tokenize import WordPunctTokenizer
+import string
+
+import nltk
+import os
+from nltk.stem import SnowballStemmer
+
+class prepare:
+    def fileread(self, filepath):  #读文件
+        with open(filepath, 'r', encoding = 'utf-8') as f:
+            raw = f.read()
+        return raw
+    def sentoken(self,raw):        #分句子，去除前面一部分内容
+        #sent_tokenizer=nltk.data.load('tokenizers/punkt/english.pickle')
+        #sents=sent_tokenizer.tokenize(raw)
+        return sents
+    def wordlower(self, line):    #转换成小写
+        return line.lower()
+    def cleanlines(self,line):   #去除标点等无用的符号
+        return re.sub('[^a-zA-Z0-9]',' ',line)
+        return line
+    def wordtoken(self,sent):    #分词
+        wordsinstr = WordPunctTokenizer().tokenize(sent)
+        #wordsinstr=nltk.word_tokenize(sent)
+        return wordsinstr
+    def cleanwords(self,words):   #去除停用词
+        cleanwords=[]
+        sr={}.fromkeys([line.strip() for line in open("停用词表的地址")])
+        for words in words: 
+            cleanwords+=[[w.lower() for w in words if w.lower() not in sr]]
+        return cleanwords   
+    def stemwords(self,cleanwordslist):    #词干提取
+        temp=[]
+        stemwords=[]
+        stemmer=SnowballStemmer('english')
+        porter=nltk.PorterStemmer()
+        for words in cleanwordslist:
+            temp+=[[stemmer.stem(w) for w in words]]
+        for words in temp:
+            stemwords+=[[porter.stem(w) for w in words]]
+        return stemwords
+    def wordstostring(self,stemwords):
+        strline=[]
+        for words in stemwords:
+            strline+=[w for w in words]
+        return strline
+    def main(self, filepath, raw, out_url, i): 
+        re_out=open(out_url,'a')  
+        sents=self.sentoken(raw)
+        cleanline=[self.cleanlines(sent) for sent in sents]
+        words=[self.wordtoken(cl) for cl in cleanline]
+        cleanwords=self.cleanwords(words)
+        stemwords=self.stemwords(cleanwords)
+        strline=self.wordstostring(stemwords)
+        re_out.write(str(i)+'\t')
+        out_str=','.join(strline)
+        re_out.write(out_str)    
+        re_out.write('\n')
+        re_out.close()
+
+
+
+if __name__ == '__main__':
+    with open('./data/word2vec/log_bpb_cpu_4_15_16_7_45', 'r', encoding='utf-8') as f:
+        words = set()
+        word_to_vec_map = {}
+        for line in f:
+            #line = line.strip().split('[: ]')
+            
+            identify =line.maketrans('', '')
+            delEStr =string.punctuation + string.digits #ASCII 标点符号，数字  
+            # cleanLine= line.translate(identify, delEStr) #去掉ASCII 标点符号和空格
+            cleanLine =line.translate(identify,delEStr) #去掉ASCII 标点符号
+            
+            curr_word = re.split('[: ]', line[0][72:])
+            words.add(curr_word)
+            word_to_vec_map[curr_word] = np.array(line[1:], dtype=np.float64)
+    
+    
+    with open('./data/word2vec/log_bpb_cpu_4_15_16_7_45', encoding='utf-8') as f:
+        document = f.read()
+        #document_decode = document.decode('GBK')
+        document_cut = jieba.cut(document)
+        #print  ' '.join(jieba_cut)  //如果打印结果，则分词效果消失，后面的result无法显示
+        result = ' '.join(document_cut)
+        result = result.encode('utf-8')
+        with open('./data/word2vec/log_bpb_cpu_4_15_16_7_45_segment.txt', 'wb+') as f2:
+            f2.write(result)
+    f.close()
+    f2.close()
+    
+    logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+    sentences = word2vec.LineSentence('./data/word2vec/in_the_name_of_people_segment.txt') 
+    model = word2vec.Word2Vec(sentences, hs = 1, min_count = 1, window = 3, size = 100)
+
+    #找出某一个词向量最相近的词集合
+    req_count = 5
+    for key in model.wv.similar_by_word('李达康', topn =100):
+        if len(key[0]) == 3:
+            req_count -= 1
+            print(key[0], key[1])
+            if req_count == 0:
+                break;
+            
+    req_count = 5
+    for key in model.wv.similar_by_word('赵东来', topn =100):
+        if len(key[0])==3:
+            req_count -= 1
+            print(key[0], key[1])
+            
+    req_count = 5
+    for key in model.wv.similar_by_word('高育良', topn =100):
+        if len(key[0])==3:
+            req_count -= 1
+            print(key[0], key[1])
+            if req_count == 0:
+                break;
+                if req_count == 0:
+                    break;
+    
+    req_count = 5
+    for key in model.wv.similar_by_word('沙瑞金', topn =100):
+        if len(key[0])==3:
+            req_count -= 1
+            print(key[0], key[1])
+            if req_count == 0:
+                break;
+    
+    #两个词向量的相近程度
+    print(model.wv.similarity('沙瑞金', '高育良'))
+    print(model.wv.similarity('李达康', '王大路'))
+    
+    #找出不同类的词，这里给出了人物分类题
+    print(model.wv.doesnt_match(u"沙瑞金 高育良 李达康 刘庆祝".split()))
+    
+    
+    #print(model['郭俊龙'])
+    print(model['沙瑞金'])

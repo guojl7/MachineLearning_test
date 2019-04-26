@@ -1,11 +1,11 @@
 -- VERSION_4
 -- START DISKCACHE_2
-E:\java_test\.metadata\.plugins\org.eclipse.core.resources\.projects\capter4_NaiveBayes\com.python.pydev.analysis\v2_indexcache
-naiveBayes|1542891515399147000|E:\java_test\capter4_NaiveBayes\src\naiveBayes.py
-nbcNaiveBayes|1542125421276303000|E:\java_test\capter4_NaiveBayes\src\nbcNaiveBayes.py
-naiveBayes_test02|1542119995958042000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test02.py
-naiveBayes_test03|1542120018779753000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test03.py
-naiveBayes_test01|1542096751979080000|E:\java_test\capter4_NaiveBayes\src\naiveBayes_test01.py
+E:\MachineLearning_base\.metadata\.plugins\org.eclipse.core.resources\.projects\capter4_NaiveBayes\com.python.pydev.analysis\v2_indexcache
+naiveBayes|1542891515399147000|E:\MachineLearning_base\capter4_NaiveBayes\src\naiveBayes.py
+nbcNaiveBayes|1542125421276303000|E:\MachineLearning_base\capter4_NaiveBayes\src\nbcNaiveBayes.py
+naiveBayes_test02|1542119995958042000|E:\MachineLearning_base\capter4_NaiveBayes\src\naiveBayes_test02.py
+naiveBayes_test03|1542120018779753000|E:\MachineLearning_base\capter4_NaiveBayes\src\naiveBayes_test03.py
+naiveBayes_test01|1542096751979080000|E:\MachineLearning_base\capter4_NaiveBayes\src\naiveBayes_test01.py
 -- END DISKCACHE
 -- START DICTIONARY
 5

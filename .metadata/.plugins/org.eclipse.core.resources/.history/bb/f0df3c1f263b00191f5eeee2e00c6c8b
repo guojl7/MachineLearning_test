@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+import os
+from keras.preprocessing import image
+import numpy as np
+from keras.applications.imagenet_utils import preprocess_input
+from PIL import ImageFile
+from PIL import Image
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
+# this function is for read image,the input is directory name
+def load_image(directory_name, target_size=(224, 224), load_count=None):
+    array_of_img = [] # this if for store all of the image data
+    count = 0;
+    # this loop is for read each image in this foder,directory_name is the foder name with images.
+    for filename in os.listdir(directory_name):
+        #print(filename) #just for test
+        #img is used to store the image data
+        img_path = directory_name + "/" + filename
+        
+        try:
+            img = image.load_img(img_path)
+        except:
+            continue
+        
+        if img.size is (161, 81):
+            continue
+            
+        width_height_tuple = (target_size[1], target_size[0])
+        img = img.resize(width_height_tuple, Image.BICUBIC)
+        
+        #img = image.load_img(img_path, target_size=(204, 204))
+        
+        x = image.img_to_array(img)
+        x = np.expand_dims(x, axis=0)
+        x = preprocess_input(x)
+        
+        array_of_img.append(img)
+        #print(img)
+        print(array_of_img)
+        count = count+1
+        
+        if load_count is not None and load_count <= count:
+            return array_of_img
+    
+    return array_of_img
