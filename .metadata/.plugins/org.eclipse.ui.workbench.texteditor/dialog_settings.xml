@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ReLU" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="variable_scope"/>
 			<item value="relu"/>
 			<item value="Relu6Grad"/>
 			<item value="_relu6_grad"/>
@@ -15,7 +16,6 @@
 			<item value="add_op_list"/>
 			<item value="shrink_axis_mask"/>
 			<item value="OpDefLibrary"/>
-			<item value="ZerosLike"/>
 		</list>
 		<list key="replacehistory">
 		</list>

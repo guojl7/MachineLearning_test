@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DeepLearningModels/src/serving-master/tensorflow_serving/example/in_graph_districted.py&apos; to &apos;in_graph_distributed.py&apos;" description="Rename resource &apos;in_graph_districted.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/serving-master/tensorflow_serving/example/in_graph_districted.py" name="in_graph_distributed.py" stamp="1558952770218" updateReferences="true"/>
+</session>

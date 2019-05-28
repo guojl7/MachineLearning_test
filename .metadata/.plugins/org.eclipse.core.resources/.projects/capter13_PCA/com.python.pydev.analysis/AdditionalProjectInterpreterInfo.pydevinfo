@@ -12,32 +12,15 @@ pca|1543998552299952000|E:\MachineLearning_base\capter13_PCA\src\pca.py
 3=pca
 -- END DICTIONARY
 -- START TREE 1
-25
+8
 ax|1|ax!11@
-col|0|
 cov|1|covMat!19@
 dat|2|dataMat!19@dataMat!11@
-eig|0|
-ffl|0|
 fig|1|fig!11@
-fw|0|
-gro|0|
-lab|0|
 loa|1|loadDataSet!26@
-mar|0|
 mea|2|meanRemoved!19@meanVals!19@
-myd|0|
-n|0|
 pca|1|pca!26@
 rep|1|replaceNanWithMean!26@
-sor|0|
-tat|0|
-tot|0|
-var|0|
-x|0|
-xco|0|
-y|0|
-yco|0|
 -- END TREE
 -- START TREE 2
 0

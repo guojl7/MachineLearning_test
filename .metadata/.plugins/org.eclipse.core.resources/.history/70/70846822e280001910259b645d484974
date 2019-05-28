@@ -1,0 +1,132 @@
+# -*- coding: utf-8 -*-
+#! /usr/bin/env python
+import tensorflow as tf
+import numpy as np
+import os
+
+'''
+分布式计算, in_graph模式
+'''
+# 定义常量，用于创建数据流图
+flags = tf.app.flags
+# 参数服务器主机
+flags.DEFINE_string("ps_hosts","192.168.43.205:1234", "Comma-separated list of hostname:port pairs")
+# 工作节点主机
+flags.DEFINE_string("worker_hosts", "192.168.43.206:1235,192.168.43.207:1236", "Comma-separated list of hostname:port pairs")
+# 本作业是工作节点还是参数服务器
+flags.DEFINE_string("job_name", None,"job name: worker or ps")
+# task_index从0开始。0代表用来初始化变量的第一个任务
+flags.DEFINE_integer("task_index", None, "Worker task index, should be >= 0. task_index=0 is the master worker task the performs the variable initialization ")
+FLAGS = flags.FLAGS
+
+def main(unused_argv):
+    if FLAGS.job_name is None or FLAGS.job_name == "":
+        raise ValueError("Must specify an explicit `job_name`")
+    if FLAGS.task_index is None or FLAGS.task_index =="":
+        raise ValueError("Must specify an explicit `task_index`")
+    
+    print("job name = %s" % FLAGS.job_name)
+    print("task index = %d" % FLAGS.task_index)
+    #Construct the cluster and start the server
+    # 读取集群描述信息
+    ps_spec = FLAGS.ps_hosts.split(",")
+    worker_spec = FLAGS.worker_hosts.split(",")
+    
+    # Get the number of workers.
+    num_workers = len(worker_spec)
+    # 创建TensorFlow集群描述对象
+    cluster = tf.train.ClusterSpec({"ps": ps_spec, "worker": worker_spec})
+    
+    server = tf.train.Server(cluster, job_name = FLAGS.job_name, task_index=FLAGS.task_index)
+    # 如果是参数服务器，直接启动即可。这里，进程就会阻塞在这里
+    # 下面的tf.train.replica_device_setter代码会将参数批定给ps_server保管
+    if ("ps" == FLAGS.job_name | ("worker" == FLAGS.job_name & "0" == FLAGS.task_index)):
+        server.join()
+
+    '''
+    (3) 创建网络结构
+    '''
+    #设定训练集数据长度
+    n_train = 100
+    #生成x数据，[-1,1]之间，均分成n_train个数据
+    train_x = np.linspace(-1,1,n_train).reshape(n_train,1)
+    #把x乘以2，在加入(0,0.3)的高斯正太分布
+    train_y = 2*train_x + np.random.normal(loc=0.0,scale=0.3,size=[n_train,1])
+    
+    #创建网络结构时，通过tf.device()函数将全部的节点都放在当前任务下
+    #with tf.device(tf.train.replica_device_setter(worker_device = '/job:worker/task:{0}'.format(task_index), cluster = cluster_spec)):
+    with tf.device("/job:ps/task:0"):
+        #创建占位符
+        input_x = tf.placeholder(dtype=tf.float32)
+        input_y = tf.placeholder(dtype=tf.float32)
+        
+        #模型参数
+        w = tf.Variable(tf.truncated_normal(shape=[1],mean=0.0,stddev=1),name='w')    #设置正太分布参数  初始化权重
+        b = tf.Variable(tf.truncated_normal(shape=[1],mean=0.0,stddev=1),name='b')    #设置正太分布参数  初始化偏置
+        
+        w1 = tf.Variable(tf.truncated_normal(shape=[1],mean=0.0,stddev=1),name='w1')    #设置正太分布参数  初始化权重
+        b1 = tf.Variable(tf.truncated_normal(shape=[1],mean=0.0,stddev=1),name='b1')    #设置正太分布参数  初始化偏置
+        
+        #创建一个global_step变量
+        global_step = tf.train.get_or_create_global_step()
+        
+    with tf.device("/job:worker/task:0"):    
+        #前向结构
+        pred1 = tf.multiply(w,input_x) + b
+    
+    with tf.device("/job:worker/task:1"):    
+        #前向结构
+        pred = tf.multiply(w1,pred1) + b1
+        
+        #定义代价函数  选取二次代价函数
+        cost = tf.reduce_mean(tf.square(input_y - pred))
+        
+        #设置求解器 采用梯度下降法 学习了设置为0.001 并把global_step变量放到优化器中，这样每运行一次优化器，global_step就会自动获得当前迭代的次数
+        train = tf.train.GradientDescentOptimizer(learning_rate=0.001).minimize(cost,global_step = global_step)
+        
+    sess = tf.Session(target=server.target, config=tf.ConfigProto(log_device_placement=True))
+    
+    print("Parameter server: waiting for cluster connection...")
+    sess.run(tf.report_uninitialized_variables())
+    print("Parameter server: cluster ready!")
+    
+    print("Parameter server: initializing variables...")
+    sess.run(tf.global_variables_initializer())
+    print("Parameter server: variables initialized")
+    
+    training_epochs = 2000
+    display_step = 20
+    
+    print("sess ok：")
+    print(global_step.eval(session=sess))
+    print('开始迭代：')
+         
+    #存放批次值和代价值
+    plotdata = {'batch_size':[],'loss':[]}
+    
+    #开始迭代 这里step表示当前执行步数，迭代training_epochs轮  需要执行training_epochs*n_train步
+    for step in range(training_epochs*n_train):
+        for (x,y) in zip(train_x,train_y):
+            #开始执行图  并返回当前步数
+            _,step = sess.run([train,global_step],feed_dict={input_x:x,input_y:y})
+            
+             #一轮训练完成后 打印输出信息
+            if step % display_step == 0:
+                #计算代价值
+                loss = sess.run(cost,feed_dict={input_x:train_x,input_y:train_y})
+                print('step {0}  cost {1}  w {2}  b{3}'.format(step,loss,sess.run(w),sess.run(b)))
+        
+                #保存每display_step轮训练后的代价值以及当前迭代轮数
+                if not loss == np.nan:
+                    plotdata['batch_size'].append(step)
+                    plotdata['loss'].append(loss)
+                
+    print('Finished!')
+
+if __name__ == "__main__":
+    tf.app.run()
+
+
+
+
+

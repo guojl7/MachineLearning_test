@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/DeepLearningModels/src/YAD2K/images/out/dog.jpg" element2="/DeepLearningModels/src/YAD2K/images/out/eagle.jpg" element3="/DeepLearningModels/src/YAD2K/images/out/giraffe.jpg" element4="/DeepLearningModels/src/YAD2K/images/out/horses.jpg" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1556264744283"/>
+</session>
