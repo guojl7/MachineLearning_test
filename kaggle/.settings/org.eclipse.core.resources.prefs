@@ -1,7 +1,10 @@
 eclipse.preferences.version=1
 encoding//src/DigitRecognizer/DigitRecognizer.py=UTF-8
-encoding//src/SantanderCustomerTransactionPrediction/SantanderCustomerTransactionPrediction.py=UTF-8
+encoding//src/SantanderCustomerTransactionPrediction/SantanderCustomerTransactionPrediction_V1.py=UTF-8
 encoding//src/SantanderCustomerTransactionPrediction/feature.py=UTF-8
 encoding//src/Titanic/Titanic.py=UTF-8
 encoding//src/Titanic/Titanic_0.78.py=UTF-8
 encoding//src/Titanic/Titanic_0.789.py=UTF-8
+encoding//src/jigsaw-unintended-bias-in-toxicity-classification/data_prepare.py=UTF-8
+encoding//src/jigsaw-unintended-bias-in-toxicity-classification/jigsaw_unintended_bias_in_toxicity_classification_LSTM_V1.py=UTF-8
+encoding//src/jigsaw-unintended-bias-in-toxicity-classification/test.py=UTF-8
