@@ -2,3 +2,6 @@ eclipse.preferences.version=1
 encoding//src/test_001_nonzero.py=UTF-8
 encoding//src/test_002_PrintChinese.py=UTF-8
 encoding//src/test_003_debug.py=UTF-8
+encoding//src/test_aes.py=UTF-8
+encoding//src/test_file.py=UTF-8
+encoding//src/test_huawei.py=UTF-8

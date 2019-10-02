@@ -4,6 +4,8 @@ from numpy import *
 import random
 from blaze.expr.expressions import shape
 
+
+
 class ForceStr(str):
     def __repr__(self):
         return super(ForceStr, self).__str__()
@@ -27,6 +29,8 @@ print(a)
 print(switch_container(a))
 
 data = {'严': 1, 2: ['如'], 3:'玉'}
-print data
-print data[3]
-print(switch_container(data))
+#print data
+#print data[3]
+#print(switch_container(data))
+
+

@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/birch_cluster.py=utf-8
+encoding//src/dbscan_cluster.py=utf-8
+encoding//src/kmeans_cluster.py=utf-8
+encoding//src/pca.py=utf-8
+encoding//src/spectral_cluster.py=utf-8

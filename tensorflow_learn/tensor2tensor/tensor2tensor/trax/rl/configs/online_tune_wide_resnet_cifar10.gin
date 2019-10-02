@@ -1,0 +1,75 @@
+import tensor2tensor.trax.inputs
+import tensor2tensor.trax.models
+import tensor2tensor.trax.optimizers
+import tensor2tensor.trax.rl.envs
+import tensor2tensor.trax.rl.trainers
+
+# Parameters for batch_fun:
+# ==============================================================================
+batch_fun.batch_size = 32
+batch_fun.bucket_length = 32
+batch_fun.buckets = None
+batch_fun.eval_batch_size = 32
+
+# Parameters for inputs:
+# ==============================================================================
+inputs.data_dir = None
+inputs.dataset_name = 'cifar10'
+
+# Parameters for Momentum:
+# ==============================================================================
+Momentum.mass = 0.9
+
+# Parameters for shuffle_and_batch_data:
+# ==============================================================================
+shuffle_and_batch_data.preprocess_fun = @trax.inputs.cifar10_no_augmentation_preprocess
+
+# Parameters for FrameStackMLP:
+# ==============================================================================
+FrameStackMLP.n_frames = 4
+
+# Parameters for WideResnet:
+# ==============================================================================
+WideResnet.widen_factor = 10
+WideResnet.n_blocks = 3
+WideResnet.n_output_classes = 10
+
+# Parameters for OnlineTuneEnv:
+# ==============================================================================
+OnlineTuneEnv.inputs = @trax.inputs.inputs
+OnlineTuneEnv.model = @trax.models.WideResnet
+OnlineTuneEnv.optimizer = @trax.optimizers.Momentum
+OnlineTuneEnv.start_lr = 0.01
+OnlineTuneEnv.train_steps = 500
+OnlineTuneEnv.eval_steps = 50
+OnlineTuneEnv.env_steps = 100
+OnlineTuneEnv.observation_metrics = [
+    ("train", "metrics/accuracy"),
+    ("train", "metrics/loss"),
+    ("eval", "metrics/accuracy"),
+    ("eval", "metrics/loss"),
+]
+
+# Parameters for PPO:
+# ==============================================================================
+PPO.n_optimizer_steps = 30
+PPO.target_kl = 0.1
+PPO.boundary = 128
+PPO.max_timestep = 128
+PPO.max_timestep_eval = 128
+PPO.random_seed = None
+PPO.gamma = 0.99
+PPO.lambda_ = 0.95
+PPO.c1 = 1.0
+PPO.c2 = 0.01
+PPO.eval_every_n = 10
+PPO.done_frac_for_policy_save = 0
+PPO.n_evals = 1
+PPO.len_history_for_policy = 4
+PPO.eval_temperatures = (1.0, 0.5)
+PPO.policy_and_value_model = @trax.models.FrameStackMLP
+
+# Parameters for train_rl:
+# ==============================================================================
+train_rl.env_name = "OnlineTuneEnv-v0"
+train_rl.n_epochs = 1000
